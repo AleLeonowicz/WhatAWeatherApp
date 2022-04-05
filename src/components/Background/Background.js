@@ -1,5 +1,5 @@
 import startPic from '../../assets/start-pic.jpg';
-import classes from './Background.module.css';
+import classes from './Background.module.scss';
 
 const Background = props => {
   return (
