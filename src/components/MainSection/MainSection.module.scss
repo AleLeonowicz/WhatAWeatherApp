@@ -1,0 +1,15 @@
+@import '../../variables.scss';
+
+.mainSection {
+  height: 860px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &_Card {
+    height: 800px;
+    width: 1200px;
+    background-color: $color-grey-light;
+    border-radius: 15px;
+  }
+}

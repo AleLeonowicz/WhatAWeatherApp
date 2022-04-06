@@ -6,7 +6,7 @@ const Navbar = props => {
     <div className={classes.navbar}>
       <div className={classes.navbar_content}>
         <div className={classes.navbar_logo}>
-          THE WEA<span>THE</span>R
+          THE <span>WEA</span>THE<span>R</span>
         </div>
         <img className={classes.navbar_menu} src={menu} alt="menu" />
       </div>

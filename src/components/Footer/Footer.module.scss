@@ -1,0 +1,37 @@
+@import '../../variables.scss';
+
+.footerMain {
+  height: 100px;
+  width: 100%;
+  background-color: $color-secondary;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+
+  &_signature {
+    color: $color-white;
+    font-family: 'Lato', sans-serif;
+    font-size: 1.5rem;
+    text-align: center;
+  }
+
+  &_imgContainer {
+    & img {
+      margin-top: 6px;
+      width: 35px;
+      height: 35px;
+    }
+  }
+}
+
+.github {
+  margin-right: 10px;
+}
+
+.footerBottom {
+  height: 20px;
+  width: 100%;
+  background-color: $color-grey-dark;
+}

@@ -1,33 +1,25 @@
 @import '../../variables.scss';
 
 .header {
-  height: 250px;
+  height: 200px;
   width: 100%;
   background-color: $color-secondary;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-
-  &_content {
-    width: 1200px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-wrap: wrap;
-  }
 
   &_title {
     display: flex;
     font-size: 2.4rem;
-    width: 100%;
     justify-content: center;
   }
 
   &_searchForm {
     display: flex;
-    flex-wrap: wrap;
-    width: 100%;
+    flex-direction: column;
     justify-content: center;
+    align-items: center;
   }
 
   &_searchFormInput {
@@ -35,7 +27,7 @@
     height: 34px;
     border-radius: 15px;
     border: 1px solid $color-primary;
-    margin: 25px 400px 12px;
+    margin: 25px 0 12px;
     text-align: center;
     font-size: 1.4rem;
     transition: transform, box-shadow 0.3s;
@@ -55,7 +47,7 @@
     }
 
     &::placeholder {
-      font-family: 'Chau Philomene One', sans-serif;
+      font-family: 'Lato', sans-serif;
     }
   }
 
@@ -73,6 +65,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    cursor: pointer;
 
     &:hover {
       transform: scale(1.03);
