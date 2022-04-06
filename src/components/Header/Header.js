@@ -10,10 +10,10 @@ const Header = props => {
         <form className={classes.header_searchForm}>
           <input
             type="text"
-            className={classes.header_searchForm_input}
+            className={classes.header_searchFormInput}
             placeholder="Type in the city"
           />
-          <btn className={classes.header_searchForm_submitBtn}>SEARCH</btn>
+          <btn className={classes.header_searchFormBtn}>SEARCH</btn>
         </form>
       </div>
     </div>

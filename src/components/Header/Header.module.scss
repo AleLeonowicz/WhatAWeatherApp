@@ -28,26 +28,54 @@
     flex-wrap: wrap;
     width: 100%;
     justify-content: center;
+  }
 
-    &_input {
-      width: 350px;
-      height: 34px;
-      border-radius: 15px;
-      border: 1px solid $color-primary;
-      margin: 25px 400px 12px;
-      text-align: center;
-      font-size: 1.4rem;
+  &_searchFormInput {
+    width: 350px;
+    height: 34px;
+    border-radius: 15px;
+    border: 1px solid $color-primary;
+    margin: 25px 400px 12px;
+    text-align: center;
+    font-size: 1.4rem;
+    transition: transform, box-shadow 0.3s;
+
+    &:focus-within {
+      transform: translateY(-2px);
+      box-shadow: 0 0.7rem 3rem rgba($color-grey-dark, 0.08);
+      border-width: 2px;
     }
-    &_submitBtn {
-      width: 350px;
-      height: 34px;
-      border-radius: 15px;
-      background-color: $color-primary;
-      text-align: center;
-      font-size: 2rem;
-      color: $color-white;
+
+    &:focus-visible {
+      outline-color: $color-primary;
+    }
+
+    &:focus {
+      outline: none;
+    }
+
+    &::placeholder {
       font-family: 'Chau Philomene One', sans-serif;
-      align-items: center;
+    }
+  }
+
+  &_searchFormBtn {
+    width: 350px;
+    height: 34px;
+    border-radius: 15px;
+    background-color: $color-primary;
+    text-align: center;
+    font-size: 2rem;
+    color: $color-white;
+    font-family: 'Chau Philomene One', sans-serif;
+    align-items: center;
+    transition: all 0.2s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &:hover {
+      transform: scale(1.03);
     }
   }
 }
