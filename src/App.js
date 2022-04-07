@@ -4,7 +4,7 @@ import Header from './components/Header/Header';
 import MainSection from './components/MainSection/MainSection';
 import Footer from './components/Footer/Footer';
 
-import classes from './App.module.scss';
+// import classes from './App.module.scss';
 
 function App() {
   return (
