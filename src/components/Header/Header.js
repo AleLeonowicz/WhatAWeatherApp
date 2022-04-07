@@ -12,7 +12,7 @@ const Header = props => {
           className={classes.header_searchFormInput}
           placeholder="Type in the city"
         />
-        <btn className={classes.header_searchFormBtn}>SEARCH</btn>
+        <button className={classes.header_searchFormBtn}>SEARCH</button>
       </form>
     </div>
   );

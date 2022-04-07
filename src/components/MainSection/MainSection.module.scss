@@ -11,5 +11,7 @@
     width: 1200px;
     background-color: $color-grey-light;
     border-radius: 15px;
+    display: flex;
+    flex-wrap: nowrap;
   }
 }

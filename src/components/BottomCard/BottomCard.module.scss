@@ -1,0 +1,10 @@
+@import '../../variables.scss';
+
+.bottomCard {
+  width: 560px;
+  height: 170px;
+  background-color: $color-white;
+  border-radius: 15px;
+  padding: 30px;
+  display: flex;
+}
