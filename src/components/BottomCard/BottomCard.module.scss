@@ -7,4 +7,35 @@
   border-radius: 15px;
   padding: 30px;
   display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+
+  &_day {
+    width: 100%;
+
+    & h1 {
+      font-size: 2rem;
+      font-weight: 400;
+      text-decoration: underline;
+      margin-bottom: 15px;
+    }
+  }
+
+  &_temperature {
+    display: flex;
+    flex-wrap: nowrap;
+
+    & img {
+      height: 70px;
+      width: 70px;
+    }
+
+    & span {
+      font-size: 3.6rem;
+      font-weight: 400;
+      display: flex;
+      align-items: center;
+      margin-left: 10px;
+    }
+  }
 }
