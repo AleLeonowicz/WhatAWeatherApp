@@ -11,12 +11,17 @@ const Footer = props => {
           @ 2022 Built and designed by Aleksandra Leonowicz
         </h4>
         <div className={classes.footerMain_imgContainer}>
-          <a href="https://github.com/AleLeonowicz" target="_blank">
+          <a
+            href="https://github.com/AleLeonowicz"
+            target="_blank"
+            rel="noreferrer"
+          >
             <img className={classes.github} src={github} alt="Github link" />
           </a>
           <a
             href="https://www.linkedin.com/in/aleksandra-leonowicz/"
             target="_blank"
+            rel="noreferrer"
           >
             <img src={linkedin} alt="LinkedIn link" />
           </a>
