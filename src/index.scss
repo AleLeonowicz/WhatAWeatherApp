@@ -17,3 +17,23 @@ body {
   color: $color-black;
   font-weight: 400;
 }
+
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: $color-secondary;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: $color-pink;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: $color-primary;
+}

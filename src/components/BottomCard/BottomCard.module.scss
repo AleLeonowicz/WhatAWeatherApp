@@ -18,12 +18,14 @@
       font-weight: 400;
       text-decoration: underline;
       margin-bottom: 15px;
+      text-align: center;
     }
   }
 
   &_temperature {
     display: flex;
     flex-wrap: nowrap;
+    justify-content: center;
 
     & img {
       height: 70px;

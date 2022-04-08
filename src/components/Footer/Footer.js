@@ -27,7 +27,12 @@ const Footer = props => {
           </a>
         </div>
       </div>
-      <div className={classes.footerBottom}></div>
+      <div className={classes.footerBottom}>
+        <span>Powered by </span>
+        <a href="https://www.weatherapi.com/" title="Weather API">
+          WeatherAPI.com
+        </a>
+      </div>
     </Fragment>
   );
 };
