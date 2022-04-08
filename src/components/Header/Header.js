@@ -50,6 +50,11 @@ const Header = props => {
         className={classes.header_searchForm}
         onSubmit={cityCtx.getUserInput}
       >
+        <span>
+          {cityCtx.fetchingErr !== ''
+            ? `${cityCtx.fetchingErr.error.message} Please try again.`
+            : ' '}
+        </span>
         <input
           type="text"
           className={classes.header_searchFormInput}

@@ -11,30 +11,44 @@ const MiddleCard = props => {
         <div className={classes.middleCard_title}>THE WEATHER</div>
         <div className={classes.middleCard_info1}>
           <h2>{`WIND: ${
-            cityCtx.fetchedData ? cityCtx.fetchedData.current.wind_kph : ''
+            cityCtx.fetchedData.current
+              ? cityCtx.fetchedData.current.wind_kph
+              : ''
           } km/h`}</h2>
           <h2>{`WIND DIRECTION: ${
-            cityCtx.fetchedData ? cityCtx.fetchedData.current.wind_dir : ''
+            cityCtx.fetchedData.current
+              ? cityCtx.fetchedData.current.wind_dir
+              : ''
           }`}</h2>
           <h2>{`PRESSURE: ${
-            cityCtx.fetchedData ? cityCtx.fetchedData.current.pressure_mb : ''
+            cityCtx.fetchedData.current
+              ? cityCtx.fetchedData.current.pressure_mb
+              : ''
           } hPa`}</h2>
           <h2>{`PRECIPATION: ${
-            cityCtx.fetchedData ? cityCtx.fetchedData.current.precip_mm : ''
+            cityCtx.fetchedData.current
+              ? cityCtx.fetchedData.current.precip_mm
+              : ''
           } mm`}</h2>
         </div>
         <div className={classes.middleCard_info2}>
           <h2>{`HUMIDITY: ${
-            cityCtx.fetchedData ? cityCtx.fetchedData.current.humidity : ''
+            cityCtx.fetchedData.current
+              ? cityCtx.fetchedData.current.humidity
+              : ''
           } %`}</h2>
           <h2>{`FEELS LIKE: ${
-            cityCtx.fetchedData ? cityCtx.fetchedData.current.feelslike_c : ''
+            cityCtx.fetchedData.current
+              ? cityCtx.fetchedData.current.feelslike_c
+              : ''
           } °C`}</h2>
           <h2>{`VISABILITY: ${
-            cityCtx.fetchedData ? cityCtx.fetchedData.current.vis_km : ''
+            cityCtx.fetchedData.current
+              ? cityCtx.fetchedData.current.vis_km
+              : ''
           } km`}</h2>
           <h2>{`INDEX UV: ${
-            cityCtx.fetchedData ? cityCtx.fetchedData.current.uv : ''
+            cityCtx.fetchedData.current ? cityCtx.fetchedData.current.uv : ''
           }`}</h2>
         </div>
       </div>

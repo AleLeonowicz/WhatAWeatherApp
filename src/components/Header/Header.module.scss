@@ -20,6 +20,14 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+
+    & span {
+      margin: 12px 0 2px;
+      color: $color-tertiary;
+      font-size: 1.4rem;
+      min-height: 17px;
+      font-family: 'Lato', sans-serif;
+    }
   }
 
   &_searchFormInput {
@@ -27,7 +35,7 @@
     height: 34px;
     border-radius: 15px;
     border: 1px solid $color-primary;
-    margin: 25px 0 12px;
+    margin: 0 0 12px;
     text-align: center;
     font-size: 1.4rem;
     transition: transform, box-shadow 0.3s;

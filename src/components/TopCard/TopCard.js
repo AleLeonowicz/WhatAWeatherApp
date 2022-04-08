@@ -2,7 +2,7 @@ import React, { useContext } from 'react';
 
 import classes from './TopCard.module.scss';
 
-import weatherIcon from '../../assets/partly-sunny-outline.svg';
+// import weatherIcon from '../../assets/partly-sunny-outline.svg';
 
 import CityContext from '../../store/city-context';
 
@@ -15,19 +15,21 @@ const TopCard = props => {
     <div className={classes.topCard}>
       <div className={classes.topCard_title}>
         <h1>
-          {cityCtx.fetchedData
+          {cityCtx.fetchedData.location
             ? cityCtx.fetchedData.location.name.toUpperCase()
             : ''}
         </h1>
         <h2>{`COUNTRY: ${
-          cityCtx.fetchedData
+          cityCtx.fetchedData.location
             ? cityCtx.fetchedData.location.country.toUpperCase()
             : ''
         }`}</h2>
       </div>
       <div className={classes.topCard_mainInfo}>
         <h2>{`LOCAL TIME: ${
-          cityCtx.fetchedData ? cityCtx.fetchedData.location.localtime : ''
+          cityCtx.fetchedData.location
+            ? cityCtx.fetchedData.location.localtime
+            : ''
         }`}</h2>
         <h2>{`SUNRISE: ${
           cityCtx.fetchedData.astronomy
@@ -40,7 +42,7 @@ const TopCard = props => {
             : ''
         }`}</h2>
         <h2>{`CONDITION: ${
-          cityCtx.fetchedData
+          cityCtx.fetchedData.condition
             ? cityCtx.fetchedData.current.condition.text.toUpperCase()
             : ''
         }`}</h2>
@@ -49,13 +51,13 @@ const TopCard = props => {
         <img
           src=""
           alt={
-            cityCtx.fetchedData
+            cityCtx.fetchedData.condition
               ? cityCtx.fetchedData.current.condition.text.toUpperCase()
               : ''
           }
         ></img>
         <h1>{`${
-          cityCtx.fetchedData ? cityCtx.fetchedData.current.temp_c : ''
+          cityCtx.fetchedData.current ? cityCtx.fetchedData.current.temp_c : ''
         }°C`}</h1>
       </div>
     </div>
