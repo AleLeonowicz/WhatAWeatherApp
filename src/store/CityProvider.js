@@ -7,7 +7,7 @@ const myKey = '7b6fd23c870d4c66bba124658220704';
 const CityProvider = props => {
   const [userInput, setUserInput] = useState('');
   const [fetchedData, setFetchedData] = useState('');
-  const [fetchingErr, setFetchingErr] = useState('');
+  const [errorMsg, setErrorMsg] = useState('');
 
   //////////////////////////////////////////////////////////////////////////////////
 
@@ -21,7 +21,6 @@ const CityProvider = props => {
 
   const fetchData = async function (key, query) {
     try {
-      setFetchingErr('');
       const response = await fetch(
         `http://api.weatherapi.com/v1/current.json?key=${key}&q=${query}&aqi=no&dt=2022-04-08`
       );
@@ -30,7 +29,7 @@ const CityProvider = props => {
       console.log('data', data);
 
       if (data.error) {
-        setFetchingErr(data);
+        setErrorMsg(data.error.message);
         return;
       }
 
@@ -44,8 +43,13 @@ const CityProvider = props => {
   ///////////////////////////////////////////////////////////////////////////////////
 
   const getUserInputHandler = event => {
+    setErrorMsg('');
     event.preventDefault();
-    if (event.target[0].value.trim(' ') === '') {
+    if (
+      event.target[0].value.trim(' ') === '' ||
+      event.target[0].value.trim(' ').length < 3
+    ) {
+      setErrorMsg('You need to type at least 3 characters.');
       return;
     }
     setUserInput(event.target[0].value);
@@ -57,7 +61,8 @@ const CityProvider = props => {
   const cityContext = {
     getUserInput: getUserInputHandler,
     fetchedData: fetchedData,
-    fetchingErr: fetchingErr,
+    errorMsg: errorMsg,
+    setErrorMsg: setErrorMsg,
   };
 
   ///////////////////////////////////////////////////////////////////////////////////

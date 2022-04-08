@@ -1,43 +1,72 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState, useEffect } from 'react';
 import CityContext from '../../store/city-context';
 
 import classes from './Header.module.scss';
 
-// const myKey = '7b6fd23c870d4c66bba124658220704';
+const isInputValidHandler = (inputQuery, setErrorMsg) => {
+  console.log('inputQuery', inputQuery);
+
+  const prohibitedSigns = [
+    '!',
+    '@',
+    '#',
+    '$',
+    '%',
+    '^',
+    '&',
+    '*',
+    '(',
+    ')',
+    '_',
+    '+',
+    '=',
+    '[',
+    ']',
+    '{',
+    '}',
+    '~',
+    '`',
+    "'",
+    '"',
+    '/',
+    '|',
+    '.',
+    ',',
+    '<',
+    '>',
+    'ą',
+    'ś',
+    'ć',
+    'ż',
+    'ź',
+    'ć',
+    'ń',
+    'ł',
+    'ó',
+  ];
+
+  if (prohibitedSigns.some(sign => inputQuery.includes(sign))) {
+    setErrorMsg('Special characters are not allowed.');
+  } else {
+    setErrorMsg('');
+  }
+};
 
 const Header = props => {
-  // const [userInput, setUserInput] = useState('');
-  // const [fetchedData, setFetchedData] = useState('');
-
   const cityCtx = useContext(CityContext);
 
   console.log('cityCtx.fetchedData', cityCtx.fetchedData);
 
-  // useEffect(() => {
-  //   if (userInput !== '') {
-  //     fetchData(myKey, userInput);
-  //   }
-  // }, [userInput]);
+  const [isInputFocused, setIsInputFocused] = useState(false);
+  const [inputQuery, setInputQuery] = useState('');
 
-  // const fetchData = async function (key, query) {
-  //   const response = await fetch(
-  //     `http://api.weatherapi.com/v1/current.json?key=${key}&q=${query}&aqi=no`
-  //   );
-  //   const data = await response.json();
-  //   console.log('data', data);
-  //   if (data.totalItems === 0) {
-  //     return;
-  //   }
-  //   setFetchedData(data);
-  // };
+  const setInputQueryHandler = event => {
+    setInputQuery(event.target.value);
+  };
 
-  // const getUserInputHandler = event => {
-  //   event.preventDefault();
-  //   if (event.target[0].value.trim(' ') === '') {
-  //     return;
-  //   }
-  //   setUserInput(event.target[0].value);
-  // };
+  useEffect(() => {
+    isInputValidHandler(inputQuery, cityCtx.setErrorMsg);
+  }, [inputQuery, cityCtx.setErrorMsg]);
 
   ///////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -51,14 +80,18 @@ const Header = props => {
         onSubmit={cityCtx.getUserInput}
       >
         <span>
-          {cityCtx.fetchingErr !== ''
-            ? `${cityCtx.fetchingErr.error.message} Please try again.`
-            : ' '}
+          {cityCtx.errorMsg !== ''
+            ? `${cityCtx.errorMsg} Please try again.`
+            : ''}
         </span>
         <input
           type="text"
           className={classes.header_searchFormInput}
-          placeholder="Type in the city"
+          placeholder={isInputFocused ? '' : 'Type in the city'}
+          onFocus={() => setIsInputFocused(true)}
+          onBlur={() => setIsInputFocused(false)}
+          onChange={setInputQueryHandler}
+          value={inputQuery}
         />
         <button className={classes.header_searchFormBtn}>SEARCH</button>
       </form>
