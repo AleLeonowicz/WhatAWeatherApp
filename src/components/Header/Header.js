@@ -1,45 +1,45 @@
-import React, { useState, useEffect } from 'react';
+import React, { useContext } from 'react';
+import CityContext from '../../store/city-context';
 
 import classes from './Header.module.scss';
 
-const myKey = '7b6fd23c870d4c66bba124658220704';
-// const apiUrl = `http://api.weatherapi.com/v1/current.json?key=${key}&q=${query}&aqi=no`;
+// const myKey = '7b6fd23c870d4c66bba124658220704';
 
 const Header = props => {
-  const [userInput, setUserInput] = useState('');
-  const [fetchedData, setFetchedData] = useState('');
+  // const [userInput, setUserInput] = useState('');
+  // const [fetchedData, setFetchedData] = useState('');
 
-  useEffect(() => {
-    if (userInput !== '') {
-      fetchData(myKey, userInput);
-    }
-  }, [userInput]);
+  const cityCtx = useContext(CityContext);
 
-  const fetchData = async function (key, query) {
-    const response = await fetch(
-      `http://api.weatherapi.com/v1/current.json?key=${key}&q=${query}&aqi=no`
-    );
-    const data = await response.json();
-    console.log('data', data);
-    if (data.totalItems === 0) {
-      return;
-    }
-    setFetchedData(data);
-    console.log('fetchedData', fetchedData);
-  };
+  console.log('cityCtx.fetchedData', cityCtx.fetchedData);
 
-  const getUserInputHandler = event => {
-    event.preventDefault();
-    console.log('event', event);
-    console.log('event.target[0].value', event.target[0].value);
+  // useEffect(() => {
+  //   if (userInput !== '') {
+  //     fetchData(myKey, userInput);
+  //   }
+  // }, [userInput]);
 
-    if (event.target[0].value.trim(' ') === '') {
-      return;
-    }
-    setUserInput(event.target[0].value);
-    // console.log('userInput', userInput);
-    // fetchData(myKey, event.target[0].value);
-  };
+  // const fetchData = async function (key, query) {
+  //   const response = await fetch(
+  //     `http://api.weatherapi.com/v1/current.json?key=${key}&q=${query}&aqi=no`
+  //   );
+  //   const data = await response.json();
+  //   console.log('data', data);
+  //   if (data.totalItems === 0) {
+  //     return;
+  //   }
+  //   setFetchedData(data);
+  // };
+
+  // const getUserInputHandler = event => {
+  //   event.preventDefault();
+  //   if (event.target[0].value.trim(' ') === '') {
+  //     return;
+  //   }
+  //   setUserInput(event.target[0].value);
+  // };
+
+  ///////////////////////////////////////////////////////////////////////////////////////////////
 
   return (
     <div className={classes.header}>
@@ -48,7 +48,7 @@ const Header = props => {
       </div>
       <form
         className={classes.header_searchForm}
-        onSubmit={getUserInputHandler}
+        onSubmit={cityCtx.getUserInput}
       >
         <input
           type="text"

@@ -1,21 +1,41 @@
+import React, { useContext } from 'react';
 import classes from './MiddleCard.module.scss';
 
+import CityContext from '../../store/city-context';
+
 const MiddleCard = props => {
+  const cityCtx = useContext(CityContext);
   return (
     <div className={classes.middleCard}>
       <div className={classes.middleCard_theWeather}>
         <div className={classes.middleCard_title}>THE WEATHER</div>
         <div className={classes.middleCard_info1}>
-          <h2>WIND: 6,1 km/h</h2>
-          <h2>WIND DIRECTION: SW</h2>
-          <h2>PRESSURE: 1009 hPa</h2>
-          <h2>PRECIPITATION: 0,1 mm</h2>
+          <h2>{`WIND: ${
+            cityCtx.fetchedData ? cityCtx.fetchedData.current.wind_kph : ''
+          } km/h`}</h2>
+          <h2>{`WIND DIRECTION: ${
+            cityCtx.fetchedData ? cityCtx.fetchedData.current.wind_dir : ''
+          }`}</h2>
+          <h2>{`PRESSURE: ${
+            cityCtx.fetchedData ? cityCtx.fetchedData.current.pressure_mb : ''
+          } hPa`}</h2>
+          <h2>{`PRECIPATION: ${
+            cityCtx.fetchedData ? cityCtx.fetchedData.current.precip_mm : ''
+          } mm`}</h2>
         </div>
         <div className={classes.middleCard_info2}>
-          <h2>HUMIDITY: 82%</h2>
-          <h2>FEELS LIKE: 9,5°C</h2>
-          <h2>VISABILITY: 10km</h2>
-          <h2>INDEX UV: 1</h2>
+          <h2>{`HUMIDITY: ${
+            cityCtx.fetchedData ? cityCtx.fetchedData.current.humidity : ''
+          } %`}</h2>
+          <h2>{`FEELS LIKE: ${
+            cityCtx.fetchedData ? cityCtx.fetchedData.current.feelslike_c : ''
+          } °C`}</h2>
+          <h2>{`VISABILITY: ${
+            cityCtx.fetchedData ? cityCtx.fetchedData.current.vis_km : ''
+          } km`}</h2>
+          <h2>{`INDEX UV: ${
+            cityCtx.fetchedData ? cityCtx.fetchedData.current.uv : ''
+          }`}</h2>
         </div>
       </div>
       <div className={classes.middleCard_whatToWear}>

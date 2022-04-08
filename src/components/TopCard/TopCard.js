@@ -1,23 +1,62 @@
+import React, { useContext } from 'react';
+
 import classes from './TopCard.module.scss';
 
 import weatherIcon from '../../assets/partly-sunny-outline.svg';
 
+import CityContext from '../../store/city-context';
+
 const TopCard = props => {
+  const cityCtx = useContext(CityContext);
+
+  ///////////////////////////////////////////////////////////////////////////////////
+
   return (
     <div className={classes.topCard}>
       <div className={classes.topCard_title}>
-        <h1>BERLIN</h1>
-        <h2>LOCAL TIME: 2022-04-06 9:42</h2>
+        <h1>
+          {cityCtx.fetchedData
+            ? cityCtx.fetchedData.location.name.toUpperCase()
+            : ''}
+        </h1>
+        <h2>{`COUNTRY: ${
+          cityCtx.fetchedData
+            ? cityCtx.fetchedData.location.country.toUpperCase()
+            : ''
+        }`}</h2>
       </div>
       <div className={classes.topCard_mainInfo}>
-        <h2>CITY: BERLIN </h2>
-        <h2>REGION: BERLIN, BRANDENBURG</h2>
-        <h2>COUNTRY: GERMANY</h2>
-        <h2>TODAY: PARTLY CLOUDY</h2>
+        <h2>{`LOCAL TIME: ${
+          cityCtx.fetchedData ? cityCtx.fetchedData.location.localtime : ''
+        }`}</h2>
+        <h2>{`SUNRISE: ${
+          cityCtx.fetchedData.astronomy
+            ? cityCtx.fetchedData.astronomy.sunrise
+            : ''
+        }`}</h2>
+        <h2>{`SUNSET: ${
+          cityCtx.fetchedData.astronomy
+            ? cityCtx.fetchedData.astronomy.sunset
+            : ''
+        }`}</h2>
+        <h2>{`CONDITION: ${
+          cityCtx.fetchedData
+            ? cityCtx.fetchedData.current.condition.text.toUpperCase()
+            : ''
+        }`}</h2>
       </div>
       <div className={classes.topCard_temperature}>
-        <img src={weatherIcon} alt="partly sunny"></img>
-        <h1>8°C</h1>
+        <img
+          src=""
+          alt={
+            cityCtx.fetchedData
+              ? cityCtx.fetchedData.current.condition.text.toUpperCase()
+              : ''
+          }
+        ></img>
+        <h1>{`${
+          cityCtx.fetchedData ? cityCtx.fetchedData.current.temp_c : ''
+        }°C`}</h1>
       </div>
     </div>
   );
