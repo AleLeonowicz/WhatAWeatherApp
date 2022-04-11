@@ -11,10 +11,27 @@ const TopCard = props => {
 
   ///////////////////////////////////////////////////////////////////////////////////
 
+  const chooseFontSize = () => {
+    console.log(
+      'cityCtx.forecastData.location.name.toUpperCase().length',
+      cityCtx.forecastData.location.name.toUpperCase().length
+    );
+    if (
+      cityCtx.forecastData.location.name.toUpperCase().length > 15 &&
+      cityCtx.forecastData.location.name.toUpperCase().length < 35
+    ) {
+      return classes.topCard_title_small;
+    }
+    if (cityCtx.forecastData.location.name.toUpperCase().length > 35) {
+      return classes.topCard_title_extrasmall;
+    }
+    return classes.topCard_title_big;
+  };
+
   return (
     <div className={classes.topCard}>
       <div className={classes.topCard_title}>
-        <h1>
+        <h1 className={chooseFontSize()}>
           {cityCtx.forecastData.location
             ? cityCtx.forecastData.location.name.toUpperCase()
             : ''}
