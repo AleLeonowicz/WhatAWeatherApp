@@ -61,6 +61,10 @@ const Header = props => {
   const [inputQuery, setInputQuery] = useState('');
 
   //TODO: trzeb tu uzyc useEffect ktory przy zmianie fetchedData wyczysci inputQuery
+  useEffect(() => {
+    setInputQuery('');
+  }, [cityCtx.forecastData]);
+
   const setInputQueryHandler = event => {
     setInputQuery(event.target.value);
   };

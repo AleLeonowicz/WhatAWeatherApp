@@ -150,8 +150,8 @@ const CityProvider = props => {
 
   const cityContext = {
     getUserInput: getUserInputHandler,
-    astronomyData: astronomyData,
     forecastData: forecastData,
+    astronomyData: astronomyData,
     yesterdayData: yesterdayData,
     errorMsg: errorMsg,
     setErrorMsg: setErrorMsg,
