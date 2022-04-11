@@ -14,6 +14,23 @@ const CityProvider = props => {
   //////////////////////////////////////////////////////////////////////////////////
 
   useEffect(() => {
+    const searchParams = new URLSearchParams(window.location.search);
+
+    // if (window.location.search === '') {
+    //   searchResultsView.insertPlaceholder();
+    // }
+
+    // if (window.location.search !== '') {
+    //   view.renderSpinner();
+    // }
+
+    const query = searchParams.get('query');
+
+    if (!query) return;
+    fetchData(myKey, query);
+  }, []);
+
+  useEffect(() => {
     if (userInput !== '') {
       fetchData(myKey, userInput);
     }
@@ -43,6 +60,18 @@ const CityProvider = props => {
     const date = yyyy + '-' + mm + '-' + dd;
     console.log('date', date);
     return date;
+  };
+
+  //////////////////////////////////////////////////////////////////////////////////
+
+  const changeLink = query => {
+    if ('URLSearchParams' in window) {
+      const searchParams = new URLSearchParams(window.location.search);
+      searchParams.set('query', query);
+      const newRelativePathQuery =
+        window.location.pathname + '?' + searchParams;
+      window.history.pushState(null, '', newRelativePathQuery);
+    }
   };
 
   //////////////////////////////////////////////////////////////////////////////////
@@ -91,6 +120,9 @@ const CityProvider = props => {
       setForecastData(data1);
       setAstronomyData(data2);
       setYesterdayData(data3);
+
+      changeLink(query);
+
       return [data1, data2, data3];
     } catch (err) {
       console.error(`🔥🔥🔥 ${err}`);
