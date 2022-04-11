@@ -24,9 +24,9 @@ const CityProvider = props => {
       const response = await fetch(
         `http://api.weatherapi.com/v1/current.json?key=${key}&q=${query}&aqi=no&dt=2022-04-08`
       );
-      console.log('response', response);
+      // console.log('response', response);
       const data = await response.json();
-      console.log('data', data);
+      // console.log('data', data);
 
       if (data.error) {
         setErrorMsg(data.error.message);
@@ -53,7 +53,8 @@ const CityProvider = props => {
       return;
     }
     setUserInput(event.target[0].value);
-    event.target[0].value = '';
+    // event.target[0].value = '';
+    // console.log('event.target[0].value', event.target[0].value);
   };
 
   ///////////////////////////////////////////////////////////////////////////////////

@@ -42,7 +42,7 @@ const TopCard = props => {
             : ''
         }`}</h2>
         <h2>{`CONDITION: ${
-          cityCtx.fetchedData.condition
+          cityCtx.fetchedData.current
             ? cityCtx.fetchedData.current.condition.text.toUpperCase()
             : ''
         }`}</h2>
@@ -51,7 +51,7 @@ const TopCard = props => {
         <img
           src=""
           alt={
-            cityCtx.fetchedData.condition
+            cityCtx.fetchedData.current
               ? cityCtx.fetchedData.current.condition.text.toUpperCase()
               : ''
           }

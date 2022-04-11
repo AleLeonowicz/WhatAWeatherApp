@@ -4,7 +4,7 @@ import CityContext from '../../store/city-context';
 import classes from './Header.module.scss';
 
 const isInputValidHandler = (inputQuery, setErrorMsg) => {
-  console.log('inputQuery', inputQuery);
+  // console.log('inputQuery', inputQuery);
 
   const prohibitedSigns = [
     '!',
@@ -55,11 +55,12 @@ const isInputValidHandler = (inputQuery, setErrorMsg) => {
 const Header = props => {
   const cityCtx = useContext(CityContext);
 
-  console.log('cityCtx.fetchedData', cityCtx.fetchedData);
+  // console.log('cityCtx.fetchedData', cityCtx.fetchedData);
 
   const [isInputFocused, setIsInputFocused] = useState(false);
   const [inputQuery, setInputQuery] = useState('');
 
+  //TODO: trzeb tu uzyc useEffect ktory przy zmianie fetchedData wyczysci inputQuery
   const setInputQueryHandler = event => {
     setInputQuery(event.target.value);
   };
