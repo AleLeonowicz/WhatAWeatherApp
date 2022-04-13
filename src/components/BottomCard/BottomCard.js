@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, Fragment } from 'react';
 
 import classes from './BottomCard.module.scss';
 
@@ -66,6 +66,7 @@ const BottomCard = props => {
 
   return (
     <div className={classes.bottomCard}>
+      <div className={classes.bottomCard_title}>MAX TEMPERATURE</div>
       <div className={classes.bottomCard_container}>
         <Carousel
           responsive={responsive}
