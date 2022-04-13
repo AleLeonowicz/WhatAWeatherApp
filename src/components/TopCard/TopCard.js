@@ -12,10 +12,6 @@ const TopCard = props => {
   ///////////////////////////////////////////////////////////////////////////////////
 
   const chooseFontSize = () => {
-    console.log(
-      'cityCtx.forecastData.location.name.toUpperCase().length',
-      cityCtx.forecastData.location.name.toUpperCase().length
-    );
     if (
       cityCtx.forecastData.location.name.toUpperCase().length > 15 &&
       cityCtx.forecastData.location.name.toUpperCase().length < 35
