@@ -34,43 +34,6 @@ const BottomCard = props => {
     },
   };
 
-  // const CustomRightArrow = ({ onClick, ...rest }) => {
-  //   const {
-  //     onMove,
-  //     carouselState: { currentSlide, deviceType },
-  //   } = rest;
-  //   // onMove means if dragging or swiping in progress.
-  //   return (
-  //     <button
-  //       onClick={() => onClick()}
-  //       aria-label="Go to next slide"
-  //       className={classes.carouselContainer_arrowRight}
-  //       type="button"
-  //     >
-  //       <img src={arrowForward} alt="Go to next slide" />
-  //     </button>
-  //   );
-  // };
-
-  // const CustomLeftArrow = ({ onClick, ...rest }) => {
-  //   const {
-  //     onMove,
-  //     carouselState: { currentSlide, deviceType },
-  //   } = rest;
-  //   // onMove means if dragging or swiping in progress.
-  //   return (
-  //     <button
-  //       onClick={() => onClick()}
-  //       aria-label="Go to previous slide"
-  //       className={classes.carouselContainer_arrowLeft}
-  //       type="button"
-  //       // disabled={true}
-  //     >
-  //       <img src={arrowBack} alt="Go to previous slide" />
-  //     </button>
-  //   );
-  // };
-
   const ButtonGroup = ({ next, previous, goToSlide, ...rest }) => {
     const {
       carouselState: { currentSlide, slidesToShow },
@@ -112,12 +75,6 @@ const BottomCard = props => {
           arrows={false}
           renderButtonGroupOutside={true}
           customButtonGroup={<ButtonGroup />}
-
-          // customRightArrow={<CustomRightArrow />}
-          // customLeftArrow={<CustomLeftArrow />}
-          // renderArrowsWhenDisabled={false}
-          // renderDotsOutside={true}
-          // showDots={true}
         >
           <div className={classes.bottomCard_day} id="slide">
             <h1>3 DAYS AGO</h1>
@@ -240,18 +197,6 @@ const BottomCard = props => {
           </div>
         </Carousel>
       </div>
-
-      {/* <img
-        className={classes.bottomCard_arrowBack}
-        src={arrowBack}
-        alt="Back"
-      />
-
-      <img
-        className={classes.bottomCard_arrowForward}
-        src={arrowForward}
-        alt="Forward"
-      /> */}
     </div>
   );
 };

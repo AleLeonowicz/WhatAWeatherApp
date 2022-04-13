@@ -16,17 +16,13 @@
     display: flex;
     flex-wrap: nowrap;
     justify-content: center;
-    // overflow: hidden;
     position: absolute;
-    // padding-left: 10px;
   }
 
   &_day {
     min-width: 167px;
     max-width: 167px;
     height: 110px;
-    // background-color: $color-secondary;
-    // border: 1px solid $color-primary;
 
     & h1 {
       font-size: 2rem;
@@ -55,62 +51,10 @@
       margin-left: 10px;
     }
   }
-
-  &_arrowBack {
-    width: 30px;
-    height: 30px;
-    position: relative;
-    top: 40px;
-    cursor: pointer;
-    // left: -20px;
-    // color: $color-grey-dark;
-  }
-
-  &_arrowForward {
-    width: 30px;
-    height: 30px;
-    position: relative;
-    top: 40px;
-    cursor: pointer;
-    // left: 20px;
-    // color: $color-grey-light;
-  }
 }
 
 .carouselContainer {
   width: 502px;
-
-  // &_arrowRight {
-  //   width: 30px;
-  //   height: 30px;
-  //   position: relative;
-  //   left: -555px;
-  //   background-color: transparent;
-  //   border: none;
-  //   cursor: pointer;
-
-  //   & img {
-  //     height: 30px;
-  //     width: 30px;
-  //   }
-  // }
-
-  // &_arrowLeft {
-  //   min-width: 30px;
-  //   width: 30px;
-  //   height: 30px;
-  //   position: relative;
-  //   left: -1007px;
-  //   background-color: transparent;
-  //   border: none;
-  //   cursor: pointer;
-
-  //   & img {
-  //     height: 30px;
-  //     width: 30px;
-
-  //   }
-  // }
 
   &_buttonGroup {
     position: absolute;
