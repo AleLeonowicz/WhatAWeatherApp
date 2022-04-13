@@ -9,6 +9,8 @@ const CityProvider = props => {
   const [forecastData, setForecastData] = useState('');
   const [astronomyData, setAstronomyData] = useState('');
   const [yesterdayData, setYesterdayData] = useState('');
+  const [twoDaysAgoData, setTwoDaysAgoData] = useState('');
+  const [threeDaysAgoData, setThreeDaysAgoData] = useState('');
   const [errorMsg, setErrorMsg] = useState('');
 
   //////////////////////////////////////////////////////////////////////////////////
@@ -64,6 +66,32 @@ const CityProvider = props => {
 
   //////////////////////////////////////////////////////////////////////////////////
 
+  const getTwoDaysAgo = () => {
+    const today = new Date();
+    const dd = String(today.getDate() - 2).padStart(2, '0');
+    const mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
+    const yyyy = today.getFullYear();
+
+    const date = yyyy + '-' + mm + '-' + dd;
+    console.log('date', date);
+    return date;
+  };
+
+  //////////////////////////////////////////////////////////////////////////////////
+
+  const getThreeDaysAgo = () => {
+    const today = new Date();
+    const dd = String(today.getDate() - 2).padStart(2, '0');
+    const mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
+    const yyyy = today.getFullYear();
+
+    const date = yyyy + '-' + mm + '-' + dd;
+    console.log('date', date);
+    return date;
+  };
+
+  //////////////////////////////////////////////////////////////////////////////////
+
   const changeLink = query => {
     if ('URLSearchParams' in window) {
       const searchParams = new URLSearchParams(window.location.search);
@@ -79,28 +107,41 @@ const CityProvider = props => {
   const fetchData = async function (key, query) {
     const today = getToday();
     const yesterday = getYesterday();
+    const twoDaysAgo = getTwoDaysAgo();
+    const threeDaysAgo = getThreeDaysAgo();
 
     try {
-      const [response1, response2, response3] = await Promise.all([
-        fetch(
-          `https://api.weatherapi.com/v1/forecast.json?key=${key}&q=${query}&days=3&aqi=no&alerts=no`
-        ),
-        fetch(
-          `https://api.weatherapi.com/v1/astronomy.json?key=${key}&q=${query}&dt=${today}`
-        ),
-        fetch(
-          `https://api.weatherapi.com/v1/history.json?key=${key}&q=${query}&dt=${yesterday}`
-        ),
-      ]);
+      const [response1, response2, response3, response4, response5] =
+        await Promise.all([
+          fetch(
+            `https://api.weatherapi.com/v1/forecast.json?key=${key}&q=${query}&days=3&aqi=no&alerts=no`
+          ),
+          fetch(
+            `https://api.weatherapi.com/v1/astronomy.json?key=${key}&q=${query}&dt=${today}`
+          ),
+          fetch(
+            `https://api.weatherapi.com/v1/history.json?key=${key}&q=${query}&dt=${yesterday}`
+          ),
+          fetch(
+            `https://api.weatherapi.com/v1/history.json?key=${key}&q=${query}&dt=${twoDaysAgo}`
+          ),
+          fetch(
+            `https://api.weatherapi.com/v1/history.json?key=${key}&q=${query}&dt=${threeDaysAgo}`
+          ),
+        ]);
 
       // console.log('response', response);
       const data1 = await response1.json();
       const data2 = await response2.json();
       const data3 = await response3.json();
+      const data4 = await response4.json();
+      const data5 = await response5.json();
 
       console.log('data1', data1);
       console.log('data2', data2);
       console.log('data3', data3);
+      console.log('data4', data4);
+      console.log('data5', data5);
 
       if (data1.error) {
         setErrorMsg(data1.error.message);
@@ -117,13 +158,25 @@ const CityProvider = props => {
         return;
       }
 
+      if (data4.error) {
+        setErrorMsg(data4.error.message);
+        return;
+      }
+
+      if (data5.error) {
+        setErrorMsg(data5.error.message);
+        return;
+      }
+
       setForecastData(data1);
       setAstronomyData(data2);
       setYesterdayData(data3);
+      setTwoDaysAgoData(data4);
+      setThreeDaysAgoData(data5);
 
       changeLink(query);
 
-      return [data1, data2, data3];
+      return [data1, data2, data3, data4, data5];
     } catch (err) {
       console.error(`🔥🔥🔥 ${err}`);
     }
@@ -153,6 +206,8 @@ const CityProvider = props => {
     forecastData: forecastData,
     astronomyData: astronomyData,
     yesterdayData: yesterdayData,
+    twoDaysAgoData: twoDaysAgoData,
+    threeDaysAgoData: threeDaysAgoData,
     errorMsg: errorMsg,
     setErrorMsg: setErrorMsg,
   };

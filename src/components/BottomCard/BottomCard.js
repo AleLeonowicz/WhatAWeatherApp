@@ -76,47 +76,47 @@ const BottomCard = props => {
           renderButtonGroupOutside={true}
           customButtonGroup={<ButtonGroup />}
         >
-          <div className={classes.bottomCard_day} id="slide">
+          <div className={classes.bottomCard_day}>
             <h1>3 DAYS AGO</h1>
             <div className={classes.bottomCard_temperature}>
               <img
                 src={weatherIcon1}
                 alt={
-                  cityCtx.yesterdayData.forecast
-                    ? cityCtx.yesterdayData.forecast.forecastday['0'].day
+                  cityCtx.twoDaysAgoData.forecast
+                    ? cityCtx.twoDaysAgoData.forecast.forecastday['0'].day
                         .condition.text
                     : ''
                 }
               />
               <span>
-                {cityCtx.yesterdayData.forecast
-                  ? `${cityCtx.yesterdayData.forecast.forecastday['0'].day.avgtemp_c}°C`
+                {cityCtx.twoDaysAgoData.forecast
+                  ? `${cityCtx.twoDaysAgoData.forecast.forecastday['0'].day.maxtemp_c}°C`
                   : ''}
               </span>
             </div>
           </div>
 
-          <div className={classes.bottomCard_day} id="slide">
+          <div className={classes.bottomCard_day}>
             <h1>2 DAYS AGO</h1>
             <div className={classes.bottomCard_temperature}>
               <img
                 src={weatherIcon1}
                 alt={
-                  cityCtx.yesterdayData.forecast
-                    ? cityCtx.yesterdayData.forecast.forecastday['0'].day
+                  cityCtx.threeDaysAgoData.forecast
+                    ? cityCtx.threeDaysAgoData.forecast.forecastday['0'].day
                         .condition.text
                     : ''
                 }
               />
               <span>
-                {cityCtx.yesterdayData.forecast
-                  ? `${cityCtx.yesterdayData.forecast.forecastday['0'].day.avgtemp_c}°C`
+                {cityCtx.threeDaysAgoData.forecast
+                  ? `${cityCtx.threeDaysAgoData.forecast.forecastday['0'].day.maxtemp_c}°C`
                   : ''}
               </span>
             </div>
           </div>
 
-          <div className={classes.bottomCard_day} id="slide">
+          <div className={classes.bottomCard_day}>
             <h1>YESTERDAY</h1>
             <div className={classes.bottomCard_temperature}>
               <img
@@ -130,13 +130,13 @@ const BottomCard = props => {
               />
               <span>
                 {cityCtx.yesterdayData.forecast
-                  ? `${cityCtx.yesterdayData.forecast.forecastday['0'].day.avgtemp_c}°C`
+                  ? `${cityCtx.yesterdayData.forecast.forecastday['0'].day.maxtemp_c}°C`
                   : ''}
               </span>
             </div>
           </div>
 
-          <div className={classes.bottomCard_day} id="slide">
+          <div className={classes.bottomCard_day}>
             <h1>TODAY</h1>
             <div className={classes.bottomCard_temperature}>
               <img
@@ -150,13 +150,13 @@ const BottomCard = props => {
               />
               <span>
                 {cityCtx.forecastData.forecast
-                  ? `${cityCtx.forecastData.forecast.forecastday['0'].day.avgtemp_c}°C`
+                  ? `${cityCtx.forecastData.forecast.forecastday['0'].day.maxtemp_c}°C`
                   : ''}
               </span>
             </div>
           </div>
 
-          <div className={classes.bottomCard_day} id="slide">
+          <div className={classes.bottomCard_day}>
             <h1>TOMORROW</h1>
             <div className={classes.bottomCard_temperature}>
               <img
@@ -170,13 +170,13 @@ const BottomCard = props => {
               />
               <span>
                 {cityCtx.forecastData.forecast
-                  ? `${cityCtx.forecastData.forecast.forecastday['1'].day.avgtemp_c} °C`
+                  ? `${cityCtx.forecastData.forecast.forecastday['1'].day.maxtemp_c} °C`
                   : ''}
               </span>
             </div>
           </div>
 
-          <div className={classes.bottomCard_day} id="slide">
+          <div className={classes.bottomCard_day}>
             <h1>IN 2 DAYS</h1>
             <div className={classes.bottomCard_temperature}>
               <img
@@ -190,7 +190,7 @@ const BottomCard = props => {
               />
               <span>
                 {cityCtx.forecastData.forecast
-                  ? `${cityCtx.forecastData.forecast.forecastday['2'].day.avgtemp_c} °C`
+                  ? `${cityCtx.forecastData.forecast.forecastday['2'].day.maxtemp_c} °C`
                   : ''}
               </span>
             </div>
