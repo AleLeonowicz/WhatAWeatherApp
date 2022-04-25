@@ -2,9 +2,6 @@ import React, { useContext, Fragment } from 'react';
 
 import classes from './BottomCard.module.scss';
 
-import weatherIcon1 from '../../assets/sunny-outline.svg';
-import weatherIcon2 from '../../assets/partly-sunny-outline.svg';
-import weatherIcon3 from '../../assets/sunny-outline.svg';
 import arrowBack from '../../assets/arrow-back-outline.svg';
 import arrowForward from '../../assets/arrow-forward-outline.svg';
 
@@ -83,27 +80,13 @@ const BottomCard = props => {
             <h1>3 DAYS AGO</h1>
             <div className={classes.bottomCard_temperature}>
               <img
-                src={weatherIcon1}
-                alt={
-                  cityCtx.twoDaysAgoData.forecast
-                    ? cityCtx.twoDaysAgoData.forecast.forecastday['0'].day
-                        .condition.text
+                src={
+                  cityCtx.threeDaysAgoData.forecast
+                    ? icons[
+                        `day${cityCtx.threeDaysAgoData.forecast.forecastday['0'].day.condition.code}`
+                      ]
                     : ''
                 }
-              />
-              <span>
-                {cityCtx.twoDaysAgoData.forecast
-                  ? `${cityCtx.twoDaysAgoData.forecast.forecastday['0'].day.maxtemp_c}°C`
-                  : ''}
-              </span>
-            </div>
-          </div>
-
-          <div className={classes.bottomCard_day}>
-            <h1>2 DAYS AGO</h1>
-            <div className={classes.bottomCard_temperature}>
-              <img
-                src={weatherIcon1}
                 alt={
                   cityCtx.threeDaysAgoData.forecast
                     ? cityCtx.threeDaysAgoData.forecast.forecastday['0'].day
@@ -120,10 +103,42 @@ const BottomCard = props => {
           </div>
 
           <div className={classes.bottomCard_day}>
+            <h1>2 DAYS AGO</h1>
+            <div className={classes.bottomCard_temperature}>
+              <img
+                src={
+                  cityCtx.twoDaysAgoData.forecast
+                    ? icons[
+                        `day${cityCtx.twoDaysAgoData.forecast.forecastday['0'].day.condition.code}`
+                      ]
+                    : ''
+                }
+                alt={
+                  cityCtx.twoDaysAgoData.forecast
+                    ? cityCtx.twoDaysAgoData.forecast.forecastday['0'].day
+                        .condition.text
+                    : ''
+                }
+              />
+              <span>
+                {cityCtx.twoDaysAgoData.forecast
+                  ? `${cityCtx.twoDaysAgoData.forecast.forecastday['0'].day.maxtemp_c}°C`
+                  : ''}
+              </span>
+            </div>
+          </div>
+
+          <div className={classes.bottomCard_day}>
             <h1>YESTERDAY</h1>
             <div className={classes.bottomCard_temperature}>
               <img
-                src={weatherIcon1}
+                src={
+                  cityCtx.yesterdayData.forecast
+                    ? icons[
+                        `day${cityCtx.yesterdayData.forecast.forecastday['0'].day.condition.code}`
+                      ]
+                    : ''
+                }
                 alt={
                   cityCtx.yesterdayData.forecast
                     ? cityCtx.yesterdayData.forecast.forecastday['0'].day
@@ -143,7 +158,13 @@ const BottomCard = props => {
             <h1>TODAY</h1>
             <div className={classes.bottomCard_temperature}>
               <img
-                src={weatherIcon1}
+                src={
+                  cityCtx.forecastData.forecast
+                    ? icons[
+                        `day${cityCtx.forecastData.forecast.forecastday['0'].day.condition.code}`
+                      ]
+                    : ''
+                }
                 alt={
                   cityCtx.forecastData.forecast
                     ? cityCtx.forecastData.forecast.forecastday['0'].day
@@ -163,7 +184,13 @@ const BottomCard = props => {
             <h1>TOMORROW</h1>
             <div className={classes.bottomCard_temperature}>
               <img
-                src={weatherIcon2}
+                src={
+                  cityCtx.forecastData.forecast
+                    ? icons[
+                        `day${cityCtx.forecastData.forecast.forecastday['1'].day.condition.code}`
+                      ]
+                    : ''
+                }
                 alt={
                   cityCtx.forecastData.forecast
                     ? cityCtx.forecastData.forecast.forecastday['1'].day
@@ -183,7 +210,13 @@ const BottomCard = props => {
             <h1>IN 2 DAYS</h1>
             <div className={classes.bottomCard_temperature}>
               <img
-                src={weatherIcon3}
+                src={
+                  cityCtx.forecastData.forecast
+                    ? icons[
+                        `day${cityCtx.forecastData.forecast.forecastday['2'].day.condition.code}`
+                      ]
+                    : ''
+                }
                 alt={
                   cityCtx.forecastData.forecast
                     ? cityCtx.forecastData.forecast.forecastday['2'].day

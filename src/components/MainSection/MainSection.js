@@ -10,7 +10,7 @@ const MainSection = props => {
   return (
     <div className={classes.mainSection}>
       <div className={classes.mainSection_Card}>
-        {cityCtx.astronomyData.astronomy ? (
+        {cityCtx.forecastData.location ? (
           <Fragment>
             <InfoCard />
             <IllustrationCard />

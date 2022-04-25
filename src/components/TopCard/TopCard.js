@@ -2,9 +2,6 @@ import React, { useContext, lazy } from 'react';
 
 import classes from './TopCard.module.scss';
 
-// import weatherIcon from '../../assets/partly-sunny-outline.svg';
-// import icon113 from '../../assets/svgs/113.svg';
-// import icon116 from '../../assets/svgs/116.svg';
 import icons from '../../assets/svgs/iconsMap';
 
 import CityContext from '../../store/city-context';

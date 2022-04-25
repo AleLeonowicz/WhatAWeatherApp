@@ -7,7 +7,6 @@ const myKey = '7b6fd23c870d4c66bba124658220704';
 const CityProvider = props => {
   const [userInput, setUserInput] = useState('');
   const [forecastData, setForecastData] = useState('');
-  const [astronomyData, setAstronomyData] = useState('');
   const [yesterdayData, setYesterdayData] = useState('');
   const [twoDaysAgoData, setTwoDaysAgoData] = useState('');
   const [threeDaysAgoData, setThreeDaysAgoData] = useState('');
@@ -39,19 +38,6 @@ const CityProvider = props => {
   }, [userInput]);
 
   ///////////////////////////////////////////////////////////////////////////////////
-
-  const getToday = () => {
-    const today = new Date();
-    const dd = String(today.getDate()).padStart(2, '0');
-    const mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
-    const yyyy = today.getFullYear();
-
-    const date = yyyy + '-' + mm + '-' + dd;
-    console.log('date', date);
-    return date;
-  };
-
-  //////////////////////////////////////////////////////////////////////////////////
 
   const getYesterday = () => {
     const today = new Date();
@@ -105,43 +91,36 @@ const CityProvider = props => {
   //////////////////////////////////////////////////////////////////////////////////
 
   const fetchData = async function (key, query) {
-    const today = getToday();
     const yesterday = getYesterday();
     const twoDaysAgo = getTwoDaysAgo();
     const threeDaysAgo = getThreeDaysAgo();
 
     try {
-      const [response1, response2, response3, response4, response5] =
-        await Promise.all([
-          fetch(
-            `https://api.weatherapi.com/v1/forecast.json?key=${key}&q=${query}&days=3&aqi=no&alerts=no`
-          ),
-          fetch(
-            `https://api.weatherapi.com/v1/astronomy.json?key=${key}&q=${query}&dt=${today}`
-          ),
-          fetch(
-            `https://api.weatherapi.com/v1/history.json?key=${key}&q=${query}&dt=${yesterday}`
-          ),
-          fetch(
-            `https://api.weatherapi.com/v1/history.json?key=${key}&q=${query}&dt=${twoDaysAgo}`
-          ),
-          fetch(
-            `https://api.weatherapi.com/v1/history.json?key=${key}&q=${query}&dt=${threeDaysAgo}`
-          ),
-        ]);
+      const [response1, response2, response3, response4] = await Promise.all([
+        fetch(
+          `https://api.weatherapi.com/v1/forecast.json?key=${key}&q=${query}&days=3&aqi=no&alerts=no`
+        ),
+        fetch(
+          `https://api.weatherapi.com/v1/history.json?key=${key}&q=${query}&dt=${yesterday}`
+        ),
+        fetch(
+          `https://api.weatherapi.com/v1/history.json?key=${key}&q=${query}&dt=${twoDaysAgo}`
+        ),
+        fetch(
+          `https://api.weatherapi.com/v1/history.json?key=${key}&q=${query}&dt=${threeDaysAgo}`
+        ),
+      ]);
 
       // console.log('response', response);
       const data1 = await response1.json();
       const data2 = await response2.json();
       const data3 = await response3.json();
       const data4 = await response4.json();
-      const data5 = await response5.json();
 
       console.log('data1', data1);
       console.log('data2', data2);
       console.log('data3', data3);
       console.log('data4', data4);
-      console.log('data5', data5);
 
       if (data1.error) {
         setErrorMsg(data1.error.message);
@@ -163,20 +142,14 @@ const CityProvider = props => {
         return;
       }
 
-      if (data5.error) {
-        setErrorMsg(data5.error.message);
-        return;
-      }
-
       setForecastData(data1);
-      setAstronomyData(data2);
-      setYesterdayData(data3);
-      setTwoDaysAgoData(data4);
-      setThreeDaysAgoData(data5);
+      setYesterdayData(data2);
+      setTwoDaysAgoData(data3);
+      setThreeDaysAgoData(data4);
 
       changeLink(query);
 
-      return [data1, data2, data3, data4, data5];
+      return [data1, data2, data3, data4];
     } catch (err) {
       console.error(`🔥🔥🔥 ${err}`);
     }
@@ -204,7 +177,6 @@ const CityProvider = props => {
   const cityContext = {
     getUserInput: getUserInputHandler,
     forecastData: forecastData,
-    astronomyData: astronomyData,
     yesterdayData: yesterdayData,
     twoDaysAgoData: twoDaysAgoData,
     threeDaysAgoData: threeDaysAgoData,
