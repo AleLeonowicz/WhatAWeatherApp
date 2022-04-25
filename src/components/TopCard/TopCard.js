@@ -1,8 +1,11 @@
-import React, { useContext } from 'react';
+import React, { useContext, lazy } from 'react';
 
 import classes from './TopCard.module.scss';
 
-import weatherIcon from '../../assets/partly-sunny-outline.svg';
+// import weatherIcon from '../../assets/partly-sunny-outline.svg';
+// import icon113 from '../../assets/svgs/113.svg';
+// import icon116 from '../../assets/svgs/116.svg';
+import icons from '../../assets/svgs/iconsMap';
 
 import CityContext from '../../store/city-context';
 
@@ -10,6 +13,8 @@ const TopCard = props => {
   const cityCtx = useContext(CityContext);
 
   ///////////////////////////////////////////////////////////////////////////////////
+
+  // console.log('icon122', icon122);
 
   const chooseFontSize = () => {
     if (
@@ -45,13 +50,13 @@ const TopCard = props => {
             : ''
         }`}</h2>
         <h2>{`SUNRISE: ${
-          cityCtx.astronomyData.astronomy
-            ? cityCtx.astronomyData.astronomy.astro.sunrise
+          cityCtx.forecastData.forecast
+            ? cityCtx.forecastData.forecast.forecastday[0].astro.sunrise
             : ''
         }`}</h2>
         <h2>{`SUNSET: ${
-          cityCtx.astronomyData.astronomy
-            ? cityCtx.astronomyData.astronomy.astro.sunset
+          cityCtx.forecastData.forecast
+            ? cityCtx.forecastData.forecast.forecastday[0].astro.sunset
             : ''
         }`}</h2>
         <h2>{`CONDITION: ${
@@ -62,7 +67,13 @@ const TopCard = props => {
       </div>
       <div className={classes.topCard_temperature}>
         <img
-          src={weatherIcon}
+          src={
+            icons[
+              `${cityCtx.forecastData.current.is_day === 1 ? 'day' : 'night'}${
+                cityCtx.forecastData.current.condition.code
+              }`
+            ]
+          }
           alt={
             cityCtx.forecastData.current
               ? cityCtx.forecastData.current.condition.text.toUpperCase()

@@ -13,6 +13,8 @@ import CityContext from '../../store/city-context';
 import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
 
+import icons from '../../assets/svgs/iconsMap';
+
 const BottomCard = props => {
   const cityCtx = useContext(CityContext);
 
