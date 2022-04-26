@@ -6,28 +6,17 @@ import icons from '../../assets/svgs/iconsMap';
 
 import CityContext from '../../store/city-context';
 
+import { chooseFontSize } from '../../utils';
+
 const TopCard = props => {
   const cityCtx = useContext(CityContext);
 
   //////////////////////////////////////////////////////////////////////////////////
 
-  const chooseFontSize = () => {
-    if (
-      cityCtx.forecastData.location.name.toUpperCase().length > 15 &&
-      cityCtx.forecastData.location.name.toUpperCase().length < 35
-    ) {
-      return classes.topCard_title_small;
-    }
-    if (cityCtx.forecastData.location.name.toUpperCase().length > 35) {
-      return classes.topCard_title_extrasmall;
-    }
-    return classes.topCard_title_big;
-  };
-
   return (
     <div className={classes.topCard}>
       <div className={classes.topCard_title}>
-        <h1 className={chooseFontSize()}>
+        <h1 className={chooseFontSize(cityCtx, classes)}>
           {cityCtx.forecastData.location
             ? cityCtx.forecastData.location.name.toUpperCase()
             : ''}

@@ -51,3 +51,18 @@ export const changeLink = query => {
 export const goToHomePage = () => {
   window.location.href = window.location.origin;
 };
+
+//////////////////////////////////////////////////////////////////////////////////
+
+export const chooseFontSize = (ctx, classes) => {
+  if (
+    ctx.forecastData.location.name.toUpperCase().length > 15 &&
+    ctx.forecastData.location.name.toUpperCase().length < 35
+  ) {
+    return classes.topCard_title_small;
+  }
+  if (ctx.forecastData.location.name.toUpperCase().length > 35) {
+    return classes.topCard_title_extrasmall;
+  }
+  return classes.topCard_title_big;
+};
