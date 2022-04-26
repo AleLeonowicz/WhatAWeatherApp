@@ -1,11 +1,9 @@
 import classes from './Navbar.module.scss';
 import menu from '../../assets/menu_grid.svg';
 
-const Navbar = props => {
-  const goToHomePage = () => {
-    window.location.href = window.location.origin;
-  };
+import { goToHomePage } from '../../utils/index';
 
+const Navbar = props => {
   return (
     <div className={classes.navbar}>
       <div className={classes.navbar_content}>

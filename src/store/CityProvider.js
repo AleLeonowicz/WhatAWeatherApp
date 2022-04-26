@@ -4,7 +4,7 @@ import CityContext from './city-context';
 
 import { fetchData } from '../API/index';
 
-const myKey = '7b6fd23c870d4c66bba124658220704';
+import { myKey } from '../constants/index';
 
 const CityProvider = props => {
   const [userInput, setUserInput] = useState('');

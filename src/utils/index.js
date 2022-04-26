@@ -47,3 +47,7 @@ export const changeLink = query => {
 };
 
 //////////////////////////////////////////////////////////////////////////////////
+
+export const goToHomePage = () => {
+  window.location.href = window.location.origin;
+};

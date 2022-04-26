@@ -1,4 +1,4 @@
-import React, { useContext, lazy } from 'react';
+import React, { useContext } from 'react';
 
 import classes from './TopCard.module.scss';
 

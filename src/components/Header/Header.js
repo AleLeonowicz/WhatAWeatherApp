@@ -3,48 +3,9 @@ import CityContext from '../../store/city-context';
 
 import classes from './Header.module.scss';
 
+import { prohibitedSigns } from '../../constants/index';
+
 const isInputValidHandler = (inputQuery, setErrorMsg) => {
-  // console.log('inputQuery', inputQuery);
-
-  const prohibitedSigns = [
-    '!',
-    '@',
-    '#',
-    '$',
-    '%',
-    '^',
-    '&',
-    '*',
-    '(',
-    ')',
-    '_',
-    '+',
-    '=',
-    '[',
-    ']',
-    '{',
-    '}',
-    '~',
-    '`',
-    "'",
-    '"',
-    '/',
-    '|',
-    '.',
-    ',',
-    '<',
-    '>',
-    'ą',
-    'ś',
-    'ć',
-    'ż',
-    'ź',
-    'ć',
-    'ń',
-    'ł',
-    'ó',
-  ];
-
   if (prohibitedSigns.some(sign => inputQuery.includes(sign))) {
     setErrorMsg('Special characters are not allowed.');
   } else {
@@ -55,12 +16,9 @@ const isInputValidHandler = (inputQuery, setErrorMsg) => {
 const Header = props => {
   const cityCtx = useContext(CityContext);
 
-  // console.log('cityCtx.fetchedData', cityCtx.fetchedData);
-
   const [isInputFocused, setIsInputFocused] = useState(false);
   const [inputQuery, setInputQuery] = useState('');
 
-  //TODO: trzeb tu uzyc useEffect ktory przy zmianie fetchedData wyczysci inputQuery
   useEffect(() => {
     setInputQuery('');
   }, [cityCtx.forecastData]);
