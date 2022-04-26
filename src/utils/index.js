@@ -5,7 +5,7 @@ export const getYesterday = () => {
   const yyyy = today.getFullYear();
 
   const date = yyyy + '-' + mm + '-' + dd;
-  console.log('date', date);
+  //   console.log('date', date);
   return date;
 };
 
@@ -18,7 +18,7 @@ export const getTwoDaysAgo = () => {
   const yyyy = today.getFullYear();
 
   const date = yyyy + '-' + mm + '-' + dd;
-  console.log('date', date);
+  //   console.log('date', date);
   return date;
 };
 
@@ -31,7 +31,7 @@ export const getThreeDaysAgo = () => {
   const yyyy = today.getFullYear();
 
   const date = yyyy + '-' + mm + '-' + dd;
-  console.log('date', date);
+  //   console.log('date', date);
   return date;
 };
 
