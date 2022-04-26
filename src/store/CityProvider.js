@@ -2,6 +2,13 @@ import React, { useState, useEffect } from 'react';
 
 import CityContext from './city-context';
 
+import {
+  getYesterday,
+  getTwoDaysAgo,
+  getThreeDaysAgo,
+  changeLink,
+} from '../utils/index';
+
 const myKey = '7b6fd23c870d4c66bba124658220704';
 
 const CityProvider = props => {
@@ -36,57 +43,6 @@ const CityProvider = props => {
       fetchData(myKey, userInput);
     }
   }, [userInput]);
-
-  ///////////////////////////////////////////////////////////////////////////////////
-
-  const getYesterday = () => {
-    const today = new Date();
-    const dd = String(today.getDate() - 1).padStart(2, '0');
-    const mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
-    const yyyy = today.getFullYear();
-
-    const date = yyyy + '-' + mm + '-' + dd;
-    console.log('date', date);
-    return date;
-  };
-
-  //////////////////////////////////////////////////////////////////////////////////
-
-  const getTwoDaysAgo = () => {
-    const today = new Date();
-    const dd = String(today.getDate() - 2).padStart(2, '0');
-    const mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
-    const yyyy = today.getFullYear();
-
-    const date = yyyy + '-' + mm + '-' + dd;
-    console.log('date', date);
-    return date;
-  };
-
-  //////////////////////////////////////////////////////////////////////////////////
-
-  const getThreeDaysAgo = () => {
-    const today = new Date();
-    const dd = String(today.getDate() - 3).padStart(2, '0');
-    const mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
-    const yyyy = today.getFullYear();
-
-    const date = yyyy + '-' + mm + '-' + dd;
-    console.log('date', date);
-    return date;
-  };
-
-  //////////////////////////////////////////////////////////////////////////////////
-
-  const changeLink = query => {
-    if ('URLSearchParams' in window) {
-      const searchParams = new URLSearchParams(window.location.search);
-      searchParams.set('query', query);
-      const newRelativePathQuery =
-        window.location.pathname + '?' + searchParams;
-      window.history.pushState(null, '', newRelativePathQuery);
-    }
-  };
 
   //////////////////////////////////////////////////////////////////////////////////
 
