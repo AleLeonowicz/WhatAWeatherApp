@@ -96,7 +96,7 @@ import night1276 from './night/1276.svg';
 import night1279 from './night/1279.svg';
 import night1282 from './night/1282.svg';
 
-export default {
+const iconsMap = {
   day1000,
   day1003,
   day1006,
@@ -194,3 +194,5 @@ export default {
   night1279,
   night1282,
 };
+
+export default iconsMap;
