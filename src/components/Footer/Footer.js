@@ -1,9 +1,10 @@
 import { Fragment } from 'react';
+
 import classes from './Footer.module.scss';
 import github from '../../assets/github-logo.svg';
 import linkedin from '../../assets/linkedin-logo.svg';
 
-const Footer = props => {
+const Footer = () => {
   return (
     <Fragment>
       <div className={classes.footerMain}>

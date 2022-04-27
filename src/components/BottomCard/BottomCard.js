@@ -1,18 +1,14 @@
 import React, { useContext } from 'react';
-
-import classes from './BottomCard.module.scss';
-
-import arrowBack from '../../assets/arrow-back-outline.svg';
-import arrowForward from '../../assets/arrow-forward-outline.svg';
-
-import CityContext from '../../store/city-context';
-
 import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
 
+import classes from './BottomCard.module.scss';
+import arrowBack from '../../assets/arrow-back-outline.svg';
+import arrowForward from '../../assets/arrow-forward-outline.svg';
+import CityContext from '../../store/city-context';
 import icons from '../../assets/svgs/iconsMap';
 
-const BottomCard = props => {
+const BottomCard = () => {
   const cityCtx = useContext(CityContext);
 
   const responsive = {

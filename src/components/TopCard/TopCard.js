@@ -1,14 +1,11 @@
 import React, { useContext } from 'react';
 
 import classes from './TopCard.module.scss';
-
 import icons from '../../assets/svgs/iconsMap';
-
 import CityContext from '../../store/city-context';
-
 import { chooseFontSize } from '../../utils';
 
-const TopCard = props => {
+const TopCard = () => {
   const cityCtx = useContext(CityContext);
 
   //////////////////////////////////////////////////////////////////////////////////

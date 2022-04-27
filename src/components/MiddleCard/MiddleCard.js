@@ -3,7 +3,7 @@ import classes from './MiddleCard.module.scss';
 
 import CityContext from '../../store/city-context';
 
-const MiddleCard = props => {
+const MiddleCard = () => {
   const cityCtx = useContext(CityContext);
   return (
     <div className={classes.middleCard}>

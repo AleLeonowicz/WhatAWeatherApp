@@ -1,37 +1,29 @@
 import React, { useState, useEffect } from 'react';
 
 import CityContext from './city-context';
-
 import { fetchData } from '../API/index';
-
-import { myKey } from '../constants/index';
 
 const CityProvider = props => {
   const [userInput, setUserInput] = useState('');
-  const [forecastData, setForecastData] = useState('');
+  const [forecastData, setForecastData] = useState(''); // { curent: { wind_mph: ''}
   const [yesterdayData, setYesterdayData] = useState('');
   const [twoDaysAgoData, setTwoDaysAgoData] = useState('');
   const [threeDaysAgoData, setThreeDaysAgoData] = useState('');
   const [errorMsg, setErrorMsg] = useState('');
+  const [renderCards, setRenderCards] = useState(false);
+  const [renderSpinner, setRenderSpinner] = useState(false);
 
   //////////////////////////////////////////////////////////////////////////////////
 
   useEffect(() => {
     const searchParams = new URLSearchParams(window.location.search);
 
-    // if (window.location.search === '') {
-    //   searchResultsView.insertPlaceholder();
-    // }
-
-    // if (window.location.search !== '') {
-    //   view.renderSpinner();
-    // }
-
     const query = searchParams.get('query');
 
     if (!query) return;
     fetchData(
-      myKey,
+      setRenderCards,
+      setRenderSpinner,
       query,
       setErrorMsg,
       setForecastData,
@@ -46,7 +38,8 @@ const CityProvider = props => {
   useEffect(() => {
     if (userInput !== '') {
       fetchData(
-        myKey,
+        setRenderCards,
+        setRenderSpinner,
         userInput,
         setErrorMsg,
         setForecastData,
@@ -82,6 +75,8 @@ const CityProvider = props => {
     threeDaysAgoData: threeDaysAgoData,
     errorMsg: errorMsg,
     setErrorMsg: setErrorMsg,
+    renderCards: renderCards,
+    renderSpinner: renderSpinner,
   };
 
   ///////////////////////////////////////////////////////////////////////////////////

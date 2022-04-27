@@ -5,8 +5,11 @@ import {
   changeLink,
 } from '../utils/index';
 
+import { myKey } from '../constants/index';
+
 export const fetchData = async function (
-  key,
+  setRenderCards,
+  setRenderSpinner,
   query,
   setErrorMsg,
   setForecastData,
@@ -14,6 +17,8 @@ export const fetchData = async function (
   setTwoDaysAgoData,
   setThreeDaysAgoData
 ) {
+  setRenderCards(false);
+  setRenderSpinner(true);
   const yesterday = getYesterday();
   const twoDaysAgo = getTwoDaysAgo();
   const threeDaysAgo = getThreeDaysAgo();
@@ -21,16 +26,16 @@ export const fetchData = async function (
   try {
     const [response1, response2, response3, response4] = await Promise.all([
       fetch(
-        `https://api.weatherapi.com/v1/forecast.json?key=${key}&q=${query}&days=3&aqi=no&alerts=no`
+        `https://api.weatherapi.com/v1/forecast.json?key=${myKey}&q=${query}&days=3&aqi=no&alerts=no`
       ),
       fetch(
-        `https://api.weatherapi.com/v1/history.json?key=${key}&q=${query}&dt=${yesterday}`
+        `https://api.weatherapi.com/v1/history.json?key=${myKey}&q=${query}&dt=${yesterday}`
       ),
       fetch(
-        `https://api.weatherapi.com/v1/history.json?key=${key}&q=${query}&dt=${twoDaysAgo}`
+        `https://api.weatherapi.com/v1/history.json?key=${myKey}&q=${query}&dt=${twoDaysAgo}`
       ),
       fetch(
-        `https://api.weatherapi.com/v1/history.json?key=${key}&q=${query}&dt=${threeDaysAgo}`
+        `https://api.weatherapi.com/v1/history.json?key=${myKey}&q=${query}&dt=${threeDaysAgo}`
       ),
     ]);
 
@@ -70,6 +75,9 @@ export const fetchData = async function (
     setThreeDaysAgoData(data4);
 
     changeLink(query);
+
+    setRenderSpinner(false);
+    setRenderCards(true);
 
     return [data1, data2, data3, data4];
   } catch (err) {

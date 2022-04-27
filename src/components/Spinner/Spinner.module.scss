@@ -1,0 +1,22 @@
+.spinner {
+  display: block;
+  margin: auto;
+  margin-top: 50px;
+  // animation: rotate 2s infinite linear;
+
+  & img {
+    height: 100px;
+    width: 100px;
+    animation: rotate 2s infinite linear;
+  }
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}

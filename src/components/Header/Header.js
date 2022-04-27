@@ -1,8 +1,7 @@
 import React, { useContext, useState, useEffect } from 'react';
+
 import CityContext from '../../store/city-context';
-
 import classes from './Header.module.scss';
-
 import { prohibitedSigns } from '../../constants/index';
 
 const isInputValidHandler = (inputQuery, setErrorMsg) => {
@@ -13,7 +12,7 @@ const isInputValidHandler = (inputQuery, setErrorMsg) => {
   }
 };
 
-const Header = props => {
+const Header = () => {
   const cityCtx = useContext(CityContext);
 
   const [isInputFocused, setIsInputFocused] = useState(false);

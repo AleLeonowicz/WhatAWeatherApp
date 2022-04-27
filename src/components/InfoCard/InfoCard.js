@@ -4,7 +4,7 @@ import BottomCard from '../BottomCard/BottomCard';
 
 import classes from './InfoCard.module.scss';
 
-const InfoCard = props => {
+const InfoCard = () => {
   return (
     <div className={classes.infoCard}>
       <TopCard />
