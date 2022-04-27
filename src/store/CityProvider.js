@@ -5,10 +5,14 @@ import { fetchData } from '../API/index';
 
 const CityProvider = props => {
   const [userInput, setUserInput] = useState('');
-  const [forecastData, setForecastData] = useState(''); // { curent: { wind_mph: ''}
-  const [yesterdayData, setYesterdayData] = useState('');
-  const [twoDaysAgoData, setTwoDaysAgoData] = useState('');
-  const [threeDaysAgoData, setThreeDaysAgoData] = useState('');
+  const [forecastData, setForecastData] = useState({
+    location: '',
+    current: '',
+    forecast: '',
+  });
+  const [yesterdayData, setYesterdayData] = useState({ forecast: '' });
+  const [twoDaysAgoData, setTwoDaysAgoData] = useState({ forecast: '' });
+  const [threeDaysAgoData, setThreeDaysAgoData] = useState({ forecast: '' });
   const [errorMsg, setErrorMsg] = useState('');
   const [renderCards, setRenderCards] = useState(false);
   const [renderSpinner, setRenderSpinner] = useState(false);

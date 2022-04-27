@@ -77,23 +77,17 @@ const BottomCard = () => {
             <div className={classes.bottomCard_temperature}>
               <img
                 src={
-                  cityCtx.threeDaysAgoData.forecast
-                    ? icons[
-                        `day${cityCtx.threeDaysAgoData.forecast.forecastday['0'].day.condition.code}`
-                      ]
-                    : ''
+                  icons[
+                    `day${cityCtx.threeDaysAgoData.forecast.forecastday['0'].day.condition.code}`
+                  ]
                 }
                 alt={
-                  cityCtx.threeDaysAgoData.forecast
-                    ? cityCtx.threeDaysAgoData.forecast.forecastday['0'].day
-                        .condition.text
-                    : ''
+                  cityCtx.threeDaysAgoData.forecast.forecastday['0'].day
+                    .condition.text
                 }
               />
               <span>
-                {cityCtx.threeDaysAgoData.forecast
-                  ? `${cityCtx.threeDaysAgoData.forecast.forecastday['0'].day.maxtemp_c}°C`
-                  : ''}
+                {`${cityCtx.threeDaysAgoData.forecast.forecastday['0'].day.maxtemp_c}°C`}
               </span>
             </div>
           </div>
@@ -103,23 +97,17 @@ const BottomCard = () => {
             <div className={classes.bottomCard_temperature}>
               <img
                 src={
-                  cityCtx.twoDaysAgoData.forecast
-                    ? icons[
-                        `day${cityCtx.twoDaysAgoData.forecast.forecastday['0'].day.condition.code}`
-                      ]
-                    : ''
+                  icons[
+                    `day${cityCtx.twoDaysAgoData.forecast.forecastday['0'].day.condition.code}`
+                  ]
                 }
                 alt={
-                  cityCtx.twoDaysAgoData.forecast
-                    ? cityCtx.twoDaysAgoData.forecast.forecastday['0'].day
-                        .condition.text
-                    : ''
+                  cityCtx.twoDaysAgoData.forecast.forecastday['0'].day.condition
+                    .text
                 }
               />
               <span>
-                {cityCtx.twoDaysAgoData.forecast
-                  ? `${cityCtx.twoDaysAgoData.forecast.forecastday['0'].day.maxtemp_c}°C`
-                  : ''}
+                {`${cityCtx.twoDaysAgoData.forecast.forecastday['0'].day.maxtemp_c}°C`}
               </span>
             </div>
           </div>
@@ -129,23 +117,14 @@ const BottomCard = () => {
             <div className={classes.bottomCard_temperature}>
               <img
                 src={
-                  cityCtx.yesterdayData.forecast
-                    ? icons[
-                        `day${cityCtx.yesterdayData.forecast.forecastday['0'].day.condition.code}`
-                      ]
-                    : ''
+                  icons[
+                    `day${cityCtx.yesterdayData.forecast.forecastday['0'].day.condition.code}`
+                  ]
                 }
-                alt={
-                  cityCtx.yesterdayData.forecast
-                    ? cityCtx.yesterdayData.forecast.forecastday['0'].day
-                        .condition.text
-                    : ''
-                }
+                alt={cityCtx.yesterdayData.forecast.forecastday['0'].day}
               />
               <span>
-                {cityCtx.yesterdayData.forecast
-                  ? `${cityCtx.yesterdayData.forecast.forecastday['0'].day.maxtemp_c}°C`
-                  : ''}
+                {`${cityCtx.yesterdayData.forecast.forecastday['0'].day.maxtemp_c}°C`}
               </span>
             </div>
           </div>
@@ -155,23 +134,17 @@ const BottomCard = () => {
             <div className={classes.bottomCard_temperature}>
               <img
                 src={
-                  cityCtx.forecastData.forecast
-                    ? icons[
-                        `day${cityCtx.forecastData.forecast.forecastday['0'].day.condition.code}`
-                      ]
-                    : ''
+                  icons[
+                    `day${cityCtx.forecastData.forecast.forecastday['0'].day.condition.code}`
+                  ]
                 }
                 alt={
-                  cityCtx.forecastData.forecast
-                    ? cityCtx.forecastData.forecast.forecastday['0'].day
-                        .condition.text
-                    : ''
+                  cityCtx.forecastData.forecast.forecastday['0'].day.condition
+                    .text
                 }
               />
               <span>
-                {cityCtx.forecastData.forecast
-                  ? `${cityCtx.forecastData.forecast.forecastday['0'].day.maxtemp_c}°C`
-                  : ''}
+                {`${cityCtx.forecastData.forecast.forecastday['0'].day.maxtemp_c}°C`}
               </span>
             </div>
           </div>
@@ -181,23 +154,17 @@ const BottomCard = () => {
             <div className={classes.bottomCard_temperature}>
               <img
                 src={
-                  cityCtx.forecastData.forecast
-                    ? icons[
-                        `day${cityCtx.forecastData.forecast.forecastday['1'].day.condition.code}`
-                      ]
-                    : ''
+                  icons[
+                    `day${cityCtx.forecastData.forecast.forecastday['1'].day.condition.code}`
+                  ]
                 }
                 alt={
-                  cityCtx.forecastData.forecast
-                    ? cityCtx.forecastData.forecast.forecastday['1'].day
-                        .condition.text
-                    : ''
+                  cityCtx.forecastData.forecast.forecastday['1'].day.condition
+                    .text
                 }
               />
               <span>
-                {cityCtx.forecastData.forecast
-                  ? `${cityCtx.forecastData.forecast.forecastday['1'].day.maxtemp_c} °C`
-                  : ''}
+                {`${cityCtx.forecastData.forecast.forecastday['1'].day.maxtemp_c} °C`}
               </span>
             </div>
           </div>
@@ -207,23 +174,17 @@ const BottomCard = () => {
             <div className={classes.bottomCard_temperature}>
               <img
                 src={
-                  cityCtx.forecastData.forecast
-                    ? icons[
-                        `day${cityCtx.forecastData.forecast.forecastday['2'].day.condition.code}`
-                      ]
-                    : ''
+                  icons[
+                    `day${cityCtx.forecastData.forecast.forecastday['2'].day.condition.code}`
+                  ]
                 }
                 alt={
-                  cityCtx.forecastData.forecast
-                    ? cityCtx.forecastData.forecast.forecastday['2'].day
-                        .condition.text
-                    : ''
+                  cityCtx.forecastData.forecast.forecastday['2'].day.condition
+                    .text
                 }
               />
               <span>
-                {cityCtx.forecastData.forecast
-                  ? `${cityCtx.forecastData.forecast.forecastday['2'].day.maxtemp_c} °C`
-                  : ''}
+                {`${cityCtx.forecastData.forecast.forecastday['2'].day.maxtemp_c} °C`}
               </span>
             </div>
           </div>
