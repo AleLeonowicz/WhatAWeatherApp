@@ -51,21 +51,25 @@ export const fetchData = async function (
 
     if (data1.error) {
       setErrorMsg(data1.error.message);
+      setRenderSpinner(false);
       return;
     }
 
     if (data2.error) {
       setErrorMsg(data2.error.message);
+      setRenderSpinner(false);
       return;
     }
 
     if (data3.error) {
       setErrorMsg(data3.error.message);
+      setRenderSpinner(false);
       return;
     }
 
     if (data4.error) {
       setErrorMsg(data4.error.message);
+      setRenderSpinner(false);
       return;
     }
 
