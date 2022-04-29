@@ -1,6 +1,11 @@
 import React, { useContext } from 'react';
 import classes from './MiddleCard.module.scss';
-import { over30Msg, over20Msg, over10Msg } from '../../constants/index';
+import {
+  over30Msg,
+  over20Msg,
+  over10Msg,
+  below0Msg,
+} from '../../constants/index';
 
 import CityContext from '../../store/city-context';
 
@@ -32,7 +37,9 @@ const MiddleCard = () => {
             ? over20Msg
             : +cityCtx.forecastData.current.temp_c > 10
             ? over10Msg
-            : 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.'}
+            : cityCtx.forecastData.current.temp_c > 0
+            ? 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.'
+            : below0Msg}
         </h2>
       </div>
     </div>

@@ -47,3 +47,9 @@ export const over20Msg =
 
 export const over10Msg =
   'Half the people on the street is showing off wearing their flip flops, second half wear winter jackets and hats. Go the middle way - be like an onion and wear layers. A blouse, a sweater and a thin jacket on top will give you an advantage over the hesitant weather.';
+
+export const over0Msg =
+  "Let's face it - it is cold. But not as much to look like a snowman.";
+
+export const below0Msg =
+  'This is a season to be freezin! Put on whatever you find in your closet - warm trousers, a huge sweater, long jacket and maybe two pairs of socks? Wool is your best friend in this condition! Go hug a sheep!';
