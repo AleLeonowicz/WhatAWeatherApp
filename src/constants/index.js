@@ -46,10 +46,10 @@ export const over20Msg =
   'You are lucky to be in a place with the best temperature! Not too cold, not too warm. No reason to complain, enjoy the moment! A T-shirt and a longer skirt or trousers will be the best choice.';
 
 export const over10Msg =
-  'Half the people on the street is showing off wearing their flip flops, second half wear winter jackets and hats. Go the middle way - be like an onion and wear layers. A blouse, a sweater and a thin jacket on top will give you an advantage over the hesitant weather.';
+  'Half the people on the street is showing off wearing their flip flops, second half wears winter jackets and hats. Go the middle way - be like an onion and wear layers. A blouse, a sweater and a thin jacket on top will give you an advantage over the hesitant weather.';
 
 export const over0Msg =
-  "Let's face it - it is cold. But not as much to look like a snowman.";
+  "Let's face it - it is cold. But not as much to look like a snowman. Grab your best pair of jeans, a turtleneck blouse, a warm jacket and enjoy the winter while looking awesome!";
 
 export const below0Msg =
-  'This is a season to be freezin! Put on whatever you find in your closet - warm trousers, a huge sweater, long jacket and maybe two pairs of socks? Wool is your best friend in this condition! Go hug a sheep!';
+  'This is a season to be freezin! Put on whatever you find in your closet - warm trousers, a huge sweater, a long jacket and maybe two pairs of socks? Wool is your best friend in this condition! Go hug a sheep!';

@@ -4,6 +4,7 @@ import {
   over30Msg,
   over20Msg,
   over10Msg,
+  over0Msg,
   below0Msg,
 } from '../../constants/index';
 
@@ -38,7 +39,7 @@ const MiddleCard = () => {
             : +cityCtx.forecastData.current.temp_c > 10
             ? over10Msg
             : cityCtx.forecastData.current.temp_c > 0
-            ? 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.'
+            ? over0Msg
             : below0Msg}
         </h2>
       </div>
