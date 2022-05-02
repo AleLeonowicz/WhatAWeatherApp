@@ -18,8 +18,10 @@
 
 @media screen and (min-width: $bp-large) and (max-width: $bp-xlarge) {
   .mainSection {
+    height: 704px;
     &_Card {
       width: 930px;
+      height: 644px;
     }
   }
 }

@@ -126,3 +126,77 @@
     }
   }
 }
+
+@media screen and (min-width: $bp-large) and (max-width: $bp-xlarge) {
+  .bottomCard {
+    width: 425px;
+    height: 150px;
+    padding: 15px;
+
+    &_title {
+      height: 20px;
+      font-size: 1.8rem;
+      margin-bottom: 20px;
+    }
+
+    &_day {
+      min-width: 128px;
+      max-width: 128px;
+      height: 80px;
+
+      & h1 {
+        font-size: 1.6rem;
+        margin-bottom: 5px;
+        text-align: center;
+      }
+    }
+
+    &_temperature {
+      & img {
+        height: 50px;
+        width: 50px;
+      }
+
+      & span {
+        font-size: 2.2rem;
+        margin-left: 8px;
+      }
+    }
+  }
+
+  .carouselContainer {
+    width: 384px;
+
+    &_buttonLeft {
+      left: -190px;
+      height: 80px;
+      width: 20px;
+      border-radius: 9px;
+
+      &_disabled {
+        width: 20px;
+      }
+
+      & img {
+        width: 20px;
+        height: 20px;
+      }
+    }
+
+    &_buttonRight {
+      left: 190px;
+      height: 80px;
+      border-radius: 9px;
+
+      &_disabled {
+        opacity: 0;
+        width: 20px;
+      }
+
+      & img {
+        width: 20px;
+        height: 20px;
+      }
+    }
+  }
+}

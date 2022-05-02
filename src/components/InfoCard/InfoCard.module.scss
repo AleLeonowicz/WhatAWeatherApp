@@ -1,13 +1,14 @@
 @import '../../variables.scss';
 
 .infoCard {
-  height: 800px;
+  height: 830px;
   width: 600px;
   padding: 20px;
 }
 
 @media screen and (min-width: $bp-large) and (max-width: $bp-xlarge) {
   .infoCard {
+    height: 644px;
     width: 465px;
   }
 }
