@@ -70,9 +70,10 @@
 
 @media screen and (min-width: $bp-large) and (max-width: $bp-xlarge) {
   .topCard {
-    width: 425px;
+    width: 435px;
     height: 180px;
     padding: 15px;
+    margin-bottom: 15px;
 
     &_title {
       &_big {
