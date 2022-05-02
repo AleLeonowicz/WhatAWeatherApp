@@ -15,3 +15,35 @@
     flex-wrap: nowrap;
   }
 }
+
+@media screen and (min-width: $bp-large) and (max-width: $bp-xlarge) {
+  .mainSection {
+    &_Card {
+      width: 930px;
+    }
+  }
+}
+
+@media screen and (min-width: $bp-medium) and (max-width: $bp-large) {
+  .mainSection {
+    &_Card {
+      width: 550px;
+    }
+  }
+}
+
+@media screen and (min-width: $bp-small) and (max-width: $bp-medium) {
+  .mainSection {
+    &_Card {
+      width: 400px;
+    }
+  }
+}
+
+@media screen and (min-width: $bp-xsmall) and (max-width: $bp-small) {
+  .mainSection {
+    &_Card {
+      width: 300px;
+    }
+  }
+}

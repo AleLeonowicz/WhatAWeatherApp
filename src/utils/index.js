@@ -1,37 +1,24 @@
-export const getYesterday = () => {
-  const today = new Date();
-  const dd = String(today.getDate() - 1).padStart(2, '0');
-  const mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
-  const yyyy = today.getFullYear();
+var dayjs = require('dayjs');
 
-  const date = yyyy + '-' + mm + '-' + dd;
-  //   console.log('date', date);
+export const getYesterday = () => {
+  const date = dayjs().subtract(1, 'day').format('YYYY-MM-DD');
+  // console.log('date', date);
   return date;
 };
 
 //////////////////////////////////////////////////////////////////////////////////
 
 export const getTwoDaysAgo = () => {
-  const today = new Date();
-  const dd = String(today.getDate() - 2).padStart(2, '0');
-  const mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
-  const yyyy = today.getFullYear();
-
-  const date = yyyy + '-' + mm + '-' + dd;
-  //   console.log('date', date);
+  const date = dayjs().subtract(2, 'day').format('YYYY-MM-DD');
+  // console.log('date', date);
   return date;
 };
 
 //////////////////////////////////////////////////////////////////////////////////
 
 export const getThreeDaysAgo = () => {
-  const today = new Date();
-  const dd = String(today.getDate() - 3).padStart(2, '0');
-  const mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
-  const yyyy = today.getFullYear();
-
-  const date = yyyy + '-' + mm + '-' + dd;
-  //   console.log('date', date);
+  const date = dayjs().subtract(3, 'day').format('YYYY-MM-DD');
+  // console.log('date', date);
   return date;
 };
 

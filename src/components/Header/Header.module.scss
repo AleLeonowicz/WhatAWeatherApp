@@ -81,3 +81,31 @@
     }
   }
 }
+
+@media screen and (min-width: $bp-small) and (max-width: $bp-medium) {
+  .header {
+    &_title {
+      font-size: 2rem;
+      text-align: center;
+      width: 350px;
+    }
+  }
+}
+
+@media screen and (min-width: $bp-xsmall) and (max-width: $bp-small) {
+  .header {
+    &_title {
+      font-size: 2rem;
+      text-align: center;
+      width: 300px;
+    }
+
+    &_searchFormInput {
+      width: 300px;
+    }
+
+    &_searchFormBtn {
+      width: 300px;
+    }
+  }
+}

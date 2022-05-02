@@ -30,7 +30,12 @@ const Footer = () => {
       </div>
       <div className={classes.footerBottom}>
         <span>Powered by </span>
-        <a href="https://www.weatherapi.com/" title="Weather API">
+        <a
+          href="https://www.weatherapi.com/"
+          title="Weather API"
+          target="_blank"
+          rel="noreferrer"
+        >
           WeatherAPI.com
         </a>
       </div>

@@ -5,3 +5,27 @@
   width: 600px;
   padding: 20px;
 }
+
+@media screen and (min-width: $bp-large) and (max-width: $bp-xlarge) {
+  .infoCard {
+    width: 465px;
+  }
+}
+
+@media screen and (min-width: $bp-medium) and (max-width: $bp-large) {
+  .infoCard {
+    width: 275px;
+  }
+}
+
+@media screen and (min-width: $bp-small) and (max-width: $bp-medium) {
+  .infoCard {
+    width: 200px;
+  }
+}
+
+@media screen and (min-width: $bp-xsmall) and (max-width: $bp-small) {
+  .infoCard {
+    width: 150px;
+  }
+}

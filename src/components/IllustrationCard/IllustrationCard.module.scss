@@ -12,3 +12,47 @@
     border-radius: 15px;
   }
 }
+
+@media screen and (min-width: $bp-large) and (max-width: $bp-xlarge) {
+  .illustrationCard {
+    width: 465px;
+
+    & img {
+      height: 830px;
+      width: 465px;
+    }
+  }
+}
+
+@media screen and (min-width: $bp-medium) and (max-width: $bp-large) {
+  .illustrationCard {
+    width: 275px;
+
+    & img {
+      height: 830px;
+      width: 275px;
+    }
+  }
+}
+
+@media screen and (min-width: $bp-small) and (max-width: $bp-medium) {
+  .illustrationCard {
+    width: 200px;
+
+    & img {
+      height: 830px;
+      width: 200px;
+    }
+  }
+}
+
+@media screen and (min-width: $bp-xsmall) and (max-width: $bp-small) {
+  .illustrationCard {
+    width: 100px;
+
+    & img {
+      height: 830px;
+      width: 100px;
+    }
+  }
+}
