@@ -363,8 +363,8 @@
     }
 
     &_day {
-      min-width: 89px;
-      max-width: 89px;
+      min-width: 87px;
+      max-width: 87px;
       height: 60px;
 
       & h1 {
@@ -388,10 +388,10 @@
   }
 
   .carouselContainer {
-    width: 268px;
+    width: 262px;
 
     &_buttonLeft {
-      left: -125px;
+      left: -123px;
       height: 60px;
       width: 15px;
       border-radius: 7px;
@@ -407,7 +407,7 @@
     }
 
     &_buttonRight {
-      left: 125px;
+      left: 123px;
       height: 60px;
       border-radius: 7px;
 

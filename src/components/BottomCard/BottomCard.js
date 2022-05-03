@@ -13,20 +13,20 @@ const BottomCard = () => {
 
   const responsive = {
     desktop: {
-      breakpoint: { max: 3000, min: 320 },
+      breakpoint: { max: 3000, min: 220 },
       items: 3,
       slidesToSlide: 1, // optional, default to 1.
     },
-    tablet: {
-      breakpoint: { max: 320, min: 220 },
-      items: 2,
-      slidesToSlide: 2, // optional, default to 1.
-    },
-    mobile: {
-      breakpoint: { max: 220, min: 0 },
-      items: 1,
-      slidesToSlide: 1, // optional, default to 1.
-    },
+    // tablet: {
+    //   breakpoint: { max: 320, min: 120 },
+    //   items: 2,
+    //   slidesToSlide: 2, // optional, default to 1.
+    // },
+    // mobile: {
+    //   breakpoint: { max: 220, min: 0 },
+    //   items: 1,
+    //   slidesToSlide: 1, // optional, default to 1.
+    // },
   };
 
   const ButtonGroup = ({ next, previous, goToSlide, ...rest }) => {
