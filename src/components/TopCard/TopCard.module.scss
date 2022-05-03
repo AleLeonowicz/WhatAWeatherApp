@@ -121,3 +121,67 @@
     }
   }
 }
+
+@media screen and (min-width: $bp-medium) and (max-width: $bp-large) {
+  .topCard {
+    width: 245px;
+    height: 365px;
+    padding: 15px;
+    margin-bottom: 15px;
+
+    &_title {
+      &_big {
+        font-size: 3.5rem;
+        line-height: 32px;
+        font-weight: 400;
+      }
+
+      &_small {
+        font-size: 2.5rem;
+      }
+
+      &_extrasmall {
+        font-size: 2.3rem;
+      }
+
+      & h2 {
+        font-size: 1.2rem;
+        margin-top: 5px;
+        font-weight: 400;
+      }
+    }
+
+    &_mainInfo {
+      width: 100%;
+      order: 3;
+
+      & h2 {
+        font-size: 1.2rem;
+        font-weight: 400;
+        line-height: 1rem;
+        margin-top: 10px;
+      }
+    }
+
+    &_temperature {
+      width: 100%;
+      // justify-content: center;
+      order: 2;
+      // align-items: flex-start;
+
+      & img {
+        width: 80px;
+        height: 80px;
+        align-self: start;
+      }
+
+      & h1 {
+        font-size: 4.5rem;
+        font-weight: 400;
+        align-self: start;
+        margin-left: 15px;
+        margin-top: 15px;
+      }
+    }
+  }
+}

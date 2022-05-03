@@ -28,9 +28,10 @@
 @media screen and (min-width: $bp-medium) and (max-width: $bp-large) {
   .illustrationCard {
     width: 275px;
+    height: 380px;
 
     & img {
-      height: 830px;
+      height: 380px;
       width: 275px;
     }
   }

@@ -82,6 +82,17 @@
   }
 }
 
+@media screen and (min-width: $bp-medium) and (max-width: $bp-large) {
+  .header {
+    height: 180px;
+    &_title {
+      font-size: 2rem;
+      text-align: center;
+      width: 550px;
+    }
+  }
+}
+
 @media screen and (min-width: $bp-small) and (max-width: $bp-medium) {
   .header {
     &_title {

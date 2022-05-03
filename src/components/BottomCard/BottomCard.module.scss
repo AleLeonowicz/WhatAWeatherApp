@@ -200,3 +200,77 @@
     }
   }
 }
+
+@media screen and (min-width: $bp-medium) and (max-width: $bp-large) {
+  .bottomCard {
+    width: 520px;
+    height: 160px;
+    padding: 15px;
+
+    &_title {
+      height: 20px;
+      font-size: 1.8rem;
+      margin-bottom: 20px;
+    }
+
+    &_day {
+      min-width: 173px;
+      max-width: 173px;
+      height: 90px;
+
+      & h1 {
+        font-size: 1.6rem;
+        margin-bottom: 5px;
+        text-align: center;
+      }
+    }
+
+    &_temperature {
+      & img {
+        height: 60px;
+        width: 60px;
+      }
+
+      & span {
+        font-size: 2.2rem;
+        margin-left: 8px;
+      }
+    }
+  }
+
+  .carouselContainer {
+    width: 490px;
+
+    &_buttonLeft {
+      left: -235px;
+      height: 90px;
+      width: 20px;
+      border-radius: 9px;
+
+      &_disabled {
+        width: 20px;
+      }
+
+      & img {
+        width: 20px;
+        height: 20px;
+      }
+    }
+
+    &_buttonRight {
+      left: 235px;
+      height: 90px;
+      border-radius: 9px;
+
+      &_disabled {
+        opacity: 0;
+        width: 20px;
+      }
+
+      & img {
+        width: 20px;
+        height: 20px;
+      }
+    }
+  }
+}

@@ -114,3 +114,44 @@
     }
   }
 }
+
+@media screen and (min-width: $bp-medium) and (max-width: $bp-large) {
+  .middleCard {
+    width: 520px;
+    height: 240px;
+    padding: 15px;
+    margin-bottom: 15px;
+
+    &_title {
+      font-size: 1.6rem;
+    }
+
+    &_info1 {
+      & h2 {
+        font-size: 1.2rem;
+        margin-top: 10px;
+        line-height: 1rem;
+      }
+    }
+
+    &_info2 {
+      & h2 {
+        font-size: 1.2rem;
+        margin-top: 8px;
+        line-height: 1rem;
+      }
+    }
+
+    &_whatToWear {
+      & h1 {
+        font-size: 1.6rem;
+        margin-bottom: 8px;
+      }
+
+      & h2 {
+        font-size: 1.2rem;
+        font-weight: 400;
+      }
+    }
+  }
+}
