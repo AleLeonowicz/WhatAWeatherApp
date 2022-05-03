@@ -278,13 +278,13 @@
 @media screen and (min-width: $bp-small) and (max-width: $bp-medium) {
   .bottomCard {
     width: 380px;
-    height: 140px;
+    height: 130px;
     padding: 10px;
 
     &_title {
       height: 20px;
       font-size: 1.6rem;
-      margin-bottom: 20px;
+      margin-bottom: 10px;
     }
 
     &_day {
