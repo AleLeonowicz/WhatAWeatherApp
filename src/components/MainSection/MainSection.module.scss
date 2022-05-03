@@ -54,8 +54,12 @@
 
 @media screen and (min-width: $bp-xsmall) and (max-width: $bp-small) {
   .mainSection {
+    padding-top: 10px;
+    height: calc(100vh - 235px);
+    min-height: 544px;
     &_Card {
       width: 300px;
+      height: 524px;
     }
   }
 }

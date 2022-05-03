@@ -13,17 +13,17 @@ const BottomCard = () => {
 
   const responsive = {
     desktop: {
-      breakpoint: { max: 3000, min: 420 },
+      breakpoint: { max: 3000, min: 320 },
       items: 3,
       slidesToSlide: 1, // optional, default to 1.
     },
     tablet: {
-      breakpoint: { max: 420, min: 320 },
+      breakpoint: { max: 320, min: 220 },
       items: 2,
       slidesToSlide: 2, // optional, default to 1.
     },
     mobile: {
-      breakpoint: { max: 320, min: 0 },
+      breakpoint: { max: 220, min: 0 },
       items: 1,
       slidesToSlide: 1, // optional, default to 1.
     },

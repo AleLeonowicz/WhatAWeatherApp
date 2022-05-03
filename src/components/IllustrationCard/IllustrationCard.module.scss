@@ -51,11 +51,13 @@
 
 @media screen and (min-width: $bp-xsmall) and (max-width: $bp-small) {
   .illustrationCard {
-    width: 100px;
+    height: 208px;
+    width: 150px;
+    border-radius: 10px;
 
     & img {
-      height: 830px;
-      width: 100px;
+      height: 208px;
+      width: 150px;
     }
   }
 }

@@ -79,8 +79,18 @@
 
 @media screen and (min-width: $bp-xsmall) and (max-width: $bp-small) {
   .navbar {
+    height: 25px;
     &_content {
       width: 300px;
+    }
+
+    &_logo {
+      font-size: 1.5rem;
+    }
+
+    &_menu {
+      width: 15px;
+      height: 15px;
     }
   }
 }

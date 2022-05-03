@@ -87,8 +87,22 @@
 
 @media screen and (min-width: $bp-xsmall) and (max-width: $bp-small) {
   .footerMain {
+    height: 60px;
     &_signature {
-      width: 200px;
+      width: 250px;
+      font-size: 1rem;
     }
+
+    &_imgContainer {
+      & img {
+        width: 20px;
+        height: 20px;
+      }
+    }
+  }
+
+  .footerBottom {
+    height: 15px;
+    font-size: 0.8rem;
   }
 }
