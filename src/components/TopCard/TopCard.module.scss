@@ -111,6 +111,13 @@
         width: 75px;
         height: 75px;
       }
+
+      & h1 {
+        font-size: 4.5rem;
+        font-weight: 400;
+        // align-self: end;
+        margin-left: 15px;
+      }
     }
   }
 }
