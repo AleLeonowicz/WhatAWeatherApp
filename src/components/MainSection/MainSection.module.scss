@@ -31,7 +31,7 @@
 @media screen and (min-width: $bp-medium) and (max-width: $bp-large) {
   .mainSection {
     padding-top: 20px;
-    height: calc(100vh - 315px);
+    height: calc(100vh - 310px);
     min-height: 870px;
     &_Card {
       width: 550px;
@@ -42,8 +42,12 @@
 
 @media screen and (min-width: $bp-small) and (max-width: $bp-medium) {
   .mainSection {
+    padding-top: 15px;
+    height: calc(100vh - 300px);
+    min-height: 696px;
     &_Card {
       width: 400px;
+      height: 666px;
     }
   }
 }

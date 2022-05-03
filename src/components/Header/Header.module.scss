@@ -90,15 +90,34 @@
       text-align: center;
       width: 550px;
     }
+
+    & span {
+      margin: 7px 0 2px;
+      color: $color-tertiary;
+      font-size: 1.4rem;
+      min-height: 17px;
+      font-family: 'Lato', sans-serif;
+    }
   }
 }
 
 @media screen and (min-width: $bp-small) and (max-width: $bp-medium) {
   .header {
+    height: 180px;
     &_title {
-      font-size: 2rem;
+      font-size: 1.8rem;
       text-align: center;
-      width: 350px;
+      width: 260px;
+    }
+
+    &_searchFormInput {
+      width: 300px;
+      height: 30px;
+    }
+
+    &_searchFormBtn {
+      width: 300px;
+      height: 30px;
     }
   }
 }
