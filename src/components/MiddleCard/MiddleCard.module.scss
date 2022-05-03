@@ -201,7 +201,7 @@
 @media screen and (min-width: $bp-xsmall) and (max-width: $bp-small) {
   .middleCard {
     width: 284px;
-    height: 190px;
+    height: 180px;
     padding: 8px;
     margin-bottom: 8px;
     border-radius: 10px;
@@ -235,6 +235,7 @@
 
       & h2 {
         font-size: 1rem;
+        line-height: 1.1rem;
         font-weight: 400;
       }
     }
