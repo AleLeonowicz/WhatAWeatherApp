@@ -9,7 +9,6 @@
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
-  // justify-content: space-between;
   overflow: hidden;
   position: absolute;
   align-items: center;
@@ -19,7 +18,7 @@
     display: flex;
     justify-content: center;
     width: 100%;
-    font-size: 20px;
+    font-size: 2rem;
     margin-bottom: 20px;
     text-decoration: underline;
     color: $color-grey-dark;
@@ -29,7 +28,6 @@
     display: flex;
     flex-wrap: nowrap;
     justify-content: center;
-    // position: absolute;
   }
 
   &_day {
@@ -40,7 +38,6 @@
     & h1 {
       font-size: 2rem;
       font-weight: 400;
-      // text-decoration: underline;
       margin-bottom: 15px;
       text-align: center;
     }
@@ -82,11 +79,8 @@
     height: 110px;
     width: 20px;
     border-radius: 9px;
-    // display: flex;
-    // align-items: center;
 
     &:hover {
-      // height: 110px;
       background-color: $color-secondary;
     }
 
@@ -111,7 +105,6 @@
     border-radius: 9px;
 
     &:hover {
-      // height: 110px;
       background-color: $color-secondary;
     }
 
@@ -134,9 +127,7 @@
     padding: 15px;
 
     &_title {
-      height: 20px;
       font-size: 1.8rem;
-      margin-bottom: 20px;
     }
 
     &_day {
@@ -147,7 +138,6 @@
       & h1 {
         font-size: 1.6rem;
         margin-bottom: 5px;
-        text-align: center;
       }
     }
 
@@ -170,33 +160,11 @@
     &_buttonLeft {
       left: -190px;
       height: 80px;
-      width: 20px;
-      border-radius: 9px;
-
-      &_disabled {
-        width: 20px;
-      }
-
-      & img {
-        width: 20px;
-        height: 20px;
-      }
     }
 
     &_buttonRight {
       left: 190px;
       height: 80px;
-      border-radius: 9px;
-
-      &_disabled {
-        opacity: 0;
-        width: 20px;
-      }
-
-      & img {
-        width: 20px;
-        height: 20px;
-      }
     }
   }
 }
@@ -208,9 +176,7 @@
     padding: 15px;
 
     &_title {
-      height: 20px;
       font-size: 1.8rem;
-      margin-bottom: 20px;
     }
 
     &_day {
@@ -221,7 +187,6 @@
       & h1 {
         font-size: 1.6rem;
         margin-bottom: 5px;
-        text-align: center;
       }
     }
 
@@ -244,33 +209,11 @@
     &_buttonLeft {
       left: -235px;
       height: 90px;
-      width: 20px;
-      border-radius: 9px;
-
-      &_disabled {
-        width: 20px;
-      }
-
-      & img {
-        width: 20px;
-        height: 20px;
-      }
     }
 
     &_buttonRight {
       left: 235px;
       height: 90px;
-      border-radius: 9px;
-
-      &_disabled {
-        opacity: 0;
-        width: 20px;
-      }
-
-      & img {
-        width: 20px;
-        height: 20px;
-      }
     }
   }
 }
@@ -282,7 +225,6 @@
     padding: 10px;
 
     &_title {
-      height: 20px;
       font-size: 1.6rem;
       margin-bottom: 10px;
     }
@@ -295,7 +237,6 @@
       & h1 {
         font-size: 1.6rem;
         margin-bottom: 5px;
-        text-align: center;
       }
     }
 
@@ -322,7 +263,7 @@
       border-radius: 7px;
 
       &_disabled {
-        width: 20px;
+        width: 15px;
       }
 
       & img {
@@ -337,8 +278,7 @@
       border-radius: 7px;
 
       &_disabled {
-        opacity: 0;
-        width: 20px;
+        width: 15px;
       }
 
       & img {
@@ -370,7 +310,6 @@
       & h1 {
         font-size: 1.4rem;
         margin-bottom: 5px;
-        text-align: center;
       }
     }
 
@@ -397,7 +336,7 @@
       border-radius: 7px;
 
       &_disabled {
-        width: 20px;
+        width: 15px;
       }
 
       & img {
@@ -412,8 +351,7 @@
       border-radius: 7px;
 
       &_disabled {
-        opacity: 0;
-        width: 20px;
+        width: 15px;
       }
 
       & img {

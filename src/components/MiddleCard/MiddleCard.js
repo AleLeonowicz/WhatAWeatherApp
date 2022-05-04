@@ -1,4 +1,5 @@
 import React, { useContext } from 'react';
+
 import classes from './MiddleCard.module.scss';
 import {
   over30Msg,
@@ -7,7 +8,6 @@ import {
   over0Msg,
   below0Msg,
 } from '../../constants/index';
-
 import CityContext from '../../store/city-context';
 
 const MiddleCard = () => {

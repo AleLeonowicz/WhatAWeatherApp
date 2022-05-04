@@ -1,5 +1,4 @@
 import classes from './Spinner.module.scss';
-
 import spinner from '../../assets/spinner.svg';
 
 const Spinner = () => {

@@ -15,16 +15,18 @@
 
     &_big {
       font-size: 4.8rem;
-      line-height: 40px;
+      line-height: 4rem;
       font-weight: 400;
     }
 
     &_small {
-      font-size: 3.5rem;
+      font-size: 3.3rem;
+      line-height: 3.1rem;
     }
 
     &_extrasmall {
       font-size: 2.5rem;
+      line-height: 2.7rem;
     }
 
     & h2 {
@@ -62,7 +64,6 @@
     & h1 {
       font-size: 4.8rem;
       font-weight: 400;
-      // align-self: end;
       margin-left: 20px;
     }
   }
@@ -78,8 +79,7 @@
     &_title {
       &_big {
         font-size: 3.5rem;
-        line-height: 32px;
-        font-weight: 400;
+        line-height: 3.2rem;
       }
 
       &_small {
@@ -88,19 +88,18 @@
 
       &_extrasmall {
         font-size: 2.3rem;
+        line-height: 2.5rem;
       }
 
       & h2 {
         font-size: 1.2rem;
         margin-top: 5px;
-        font-weight: 400;
       }
     }
 
     &_mainInfo {
       & h2 {
         font-size: 1.2rem;
-        font-weight: 400;
         line-height: 1rem;
         margin-top: 8px;
       }
@@ -114,8 +113,6 @@
 
       & h1 {
         font-size: 4.5rem;
-        font-weight: 400;
-        // align-self: end;
         margin-left: 15px;
       }
     }
@@ -132,22 +129,22 @@
     &_title {
       &_big {
         font-size: 3.5rem;
-        line-height: 32px;
-        font-weight: 400;
+        line-height: 3.2rem;
       }
 
       &_small {
         font-size: 2.5rem;
+        line-height: 2.8rem;
       }
 
       &_extrasmall {
         font-size: 2.3rem;
+        line-height: 2.5rem;
       }
 
       & h2 {
         font-size: 1.2rem;
         margin-top: 5px;
-        font-weight: 400;
       }
     }
 
@@ -157,7 +154,6 @@
 
       & h2 {
         font-size: 1.2rem;
-        font-weight: 400;
         line-height: 1rem;
         margin-top: 10px;
       }
@@ -165,9 +161,7 @@
 
     &_temperature {
       width: 100%;
-      // justify-content: center;
       order: 2;
-      // align-items: flex-start;
 
       & img {
         width: 80px;
@@ -177,7 +171,6 @@
 
       & h1 {
         font-size: 4.5rem;
-        font-weight: 400;
         align-self: start;
         margin-left: 15px;
         margin-top: 15px;
@@ -197,11 +190,11 @@
       &_big {
         font-size: 3rem;
         line-height: 32px;
-        font-weight: 400;
       }
 
       &_small {
         font-size: 2.2rem;
+        line-height: 2.5rem;
       }
 
       &_extrasmall {
@@ -211,7 +204,6 @@
       & h2 {
         font-size: 1.2rem;
         margin-top: 5px;
-        font-weight: 400;
       }
     }
 
@@ -221,7 +213,6 @@
 
       & h2 {
         font-size: 1.2rem;
-        font-weight: 400;
         line-height: 1.1rem;
         margin-top: 6px;
       }
@@ -239,7 +230,6 @@
 
       & h1 {
         font-size: 3rem;
-        font-weight: 400;
         align-self: start;
         margin-left: 15px;
         margin-top: 15px;
@@ -260,17 +250,16 @@
       &_big {
         font-size: 2.4rem;
         line-height: 2rem;
-        font-weight: 400;
       }
 
       &_small {
-        font-size: 2rem;
-        line-height: 2rem;
+        font-size: 1.5rem;
+        line-height: 1.7rem;
       }
 
       &_extrasmall {
-        font-size: 1.8rem;
-        line-height: 1.8rem;
+        font-size: 1.3rem;
+        line-height: 1.4rem;
       }
 
       & h2 {
@@ -286,7 +275,6 @@
 
       & h2 {
         font-size: 1rem;
-        font-weight: 400;
         line-height: 1rem;
         margin-top: 4px;
       }
@@ -304,7 +292,6 @@
 
       & h1 {
         font-size: 2.5rem;
-        font-weight: 400;
         align-self: start;
         margin-left: 5px;
         margin-top: 10px;

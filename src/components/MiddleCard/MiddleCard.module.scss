@@ -21,7 +21,6 @@
     font-size: 2rem;
     text-decoration: underline;
     color: $color-primary;
-    // margin-bottom: 10px;
   }
 
   &_info1 {
@@ -109,7 +108,6 @@
 
       & h2 {
         font-size: 1.2rem;
-        font-weight: 400;
       }
     }
   }
@@ -137,7 +135,7 @@
     &_info2 {
       & h2 {
         font-size: 1.2rem;
-        margin-top: 8px;
+        margin-top: 10px;
         line-height: 1rem;
       }
     }
@@ -150,7 +148,6 @@
 
       & h2 {
         font-size: 1.2rem;
-        font-weight: 400;
       }
     }
   }
@@ -179,7 +176,7 @@
     &_info2 {
       & h2 {
         font-size: 1.2rem;
-        margin-top: 8px;
+        margin-top: 6px;
         line-height: 1.1rem;
       }
     }
@@ -192,7 +189,6 @@
 
       & h2 {
         font-size: 1.2rem;
-        font-weight: 400;
       }
     }
   }
@@ -236,7 +232,6 @@
       & h2 {
         font-size: 1rem;
         line-height: 1.1rem;
-        font-weight: 400;
       }
     }
   }

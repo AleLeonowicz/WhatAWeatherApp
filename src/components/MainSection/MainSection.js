@@ -8,7 +8,6 @@ import Spinner from '../Spinner/Spinner';
 
 const MainSection = () => {
   const cityCtx = useContext(CityContext);
-  // console.log('spinner', Spinner);
   return (
     <div className={classes.mainSection}>
       <div className={classes.mainSection_Card}>

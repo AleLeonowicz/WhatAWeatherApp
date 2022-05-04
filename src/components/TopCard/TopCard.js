@@ -8,8 +8,6 @@ import { chooseFontSize } from '../../utils';
 const TopCard = () => {
   const cityCtx = useContext(CityContext);
 
-  //////////////////////////////////////////////////////////////////////////////////
-
   return (
     <div className={classes.topCard}>
       <div className={classes.topCard_title}>
