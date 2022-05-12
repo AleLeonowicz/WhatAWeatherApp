@@ -44,11 +44,6 @@ export const fetchData = async function (
     const data3 = await response3.json();
     const data4 = await response4.json();
 
-    // console.log('data1', data1);
-    // console.log('data2', data2);
-    // console.log('data3', data3);
-    // console.log('data4', data4);
-
     if (data1.error) {
       setErrorMsg(data1.error.message);
       setRenderSpinner(false);
