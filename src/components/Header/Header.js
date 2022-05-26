@@ -12,6 +12,11 @@ const isInputValidHandler = (inputQuery, setErrorMsg) => {
   }
 };
 
+// 1. Wyrenderuj headera
+// 2. Znajdź input field
+// 3. Wpisz w input field niepoprawny tekst
+// 4. Sprawdź czy error message jest renderowany
+
 const Header = () => {
   const cityCtx = useContext(CityContext);
 
@@ -41,7 +46,7 @@ const Header = () => {
         className={classes.header_searchForm}
         onSubmit={cityCtx.getUserInput}
       >
-        <span>
+        <span data-testid="headerErrorSpan">
           {cityCtx.errorMsg !== ''
             ? `${cityCtx.errorMsg} Please try again.`
             : ''}
@@ -54,6 +59,7 @@ const Header = () => {
           onBlur={() => setIsInputFocused(false)}
           onChange={setInputQueryHandler}
           value={inputQuery}
+          data-testid="headerInput"
         />
         <button className={classes.header_searchFormBtn}>SEARCH</button>
       </form>
