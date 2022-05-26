@@ -6,7 +6,11 @@ const Navbar = () => {
   return (
     <div className={classes.navbar}>
       <div className={classes.navbar_content}>
-        <div className={classes.navbar_logo} onClick={goToHomePage}>
+        <div
+          className={classes.navbar_logo}
+          data-testid="navbarLogo"
+          onClick={goToHomePage}
+        >
           THE <span>WEA</span>THE<span>R</span>
         </div>
         <img className={classes.navbar_menu} src={menu} alt="menu" />
