@@ -45,6 +45,7 @@ const Header = () => {
       <form
         className={classes.header_searchForm}
         onSubmit={cityCtx.getUserInput}
+        data-testid="headerForm"
       >
         <span data-testid="headerErrorSpan">
           {cityCtx.errorMsg !== ''
@@ -61,7 +62,12 @@ const Header = () => {
           value={inputQuery}
           data-testid="headerInput"
         />
-        <button className={classes.header_searchFormBtn}>SEARCH</button>
+        <button
+          className={classes.header_searchFormBtn}
+          data-testid="headerSubmitBtn"
+        >
+          SEARCH
+        </button>
       </form>
     </div>
   );

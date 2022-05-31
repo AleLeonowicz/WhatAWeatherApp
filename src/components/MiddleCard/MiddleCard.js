@@ -10,15 +10,10 @@ import {
 } from '../../constants/index';
 import CityContext from '../../store/city-context';
 
-const arrr = [1, 2, 3, 4, 5, 6, 7, 8];
-
 const MiddleCard = () => {
   const cityCtx = useContext(CityContext);
   return (
     <div className={classes.middleCard}>
-      {arrr.map(el => (
-        <p>{el}</p>
-      ))}
       <div className={classes.middleCard_theWeather}>
         <div className={classes.middleCard_title}>THE WEATHER</div>
         <div className={classes.middleCard_info1}>

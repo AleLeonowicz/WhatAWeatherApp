@@ -59,6 +59,9 @@ const CityProvider = props => {
   const getUserInputHandler = event => {
     setErrorMsg('');
     event.preventDefault();
+    console.log('event', event);
+    console.log('event.target[0]', event.target[0]);
+    console.log('event.target[1]', event.target[1]);
     if (
       event.target[0].value.trim(' ') === '' ||
       event.target[0].value.trim(' ').length < 3
